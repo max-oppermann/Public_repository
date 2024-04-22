@@ -1,0 +1,31 @@
+HTML tags:
+<a>
+<h1>
+<h2>
+<h3>
+<h4>
+<h5>
+<h6>
+<table>
+<tr>
+<td>
+<div>
+<p>
+<button>
+
+CSS properties:
+table: width, margin-bottom, and margin-top
+
+td: border, padding, and text-align
+
+head: background-color and padding
+
+body: font-family, line-height, and margin
+
+h1 and h2: color, font-size, and margin-bottom
+
+
+Usage of JavaScript: Telling the user how much I love this problem; triggering a bootstrap alert.
+
+
+Usage of Bootstrap: An alert gets triggered when the only button on the page gets pressed.
