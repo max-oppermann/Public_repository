@@ -1,4 +1,5 @@
 *If in doubt, try it out.* The longest of these tests is the CAIT taking a little longer than an hour, so if you have qualms about their meaningfulness just look at one of them yourself.  
+IQ tests are inherently imprecise with SEs of around 5-10 points, probably more in the tails. An IQ of 135 has a frequency of ~ 1/100, 140 ~ 1/260, 145 ~ 1/740, 150 ~ 1/2300.
 
 # SAT, AGCT
 [Link](https://cognitivemetrics.co/)  
