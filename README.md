@@ -1,5 +1,7 @@
 The relevant entries are the directories CS50P, CS50x, Princeton Algorithms I, and the file Exercises-ISLP.ipynb.  
 
+If you're a potential employer, you may be interested in my [Big Five traits](https://www.personalityassessor.com/ipip300/results=1535620-821/). You may also be interested in my *g*eneral cognitive ability yet lack the testing resources to infer it. The `explanation.md` in the `cognitive-metrics` directory could be interesting in that case.
+
 # Exercises for ISLP
 
 What it says on the tin; updated as I progress through the book. For more, see the notebook. The table of contents isn’t functional on GitHub; use https://nbviewer.org/ and paste the link to the notebook within my repository, i. e., https://github.com/max-oppermann/Public_repository/blob/master/Exercises-ISLP.ipynb, to have a functional  ToC (or just download the file and open it in JupyterLabs).
