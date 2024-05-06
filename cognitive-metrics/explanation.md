@@ -1,16 +1,22 @@
-*If in doubt, try it out.* The longest of these tests is the CAIT taking a little longer than an hour, so if you have qualms about their meaningfulness just look at one of them yourself.
+*If in doubt, try it out.* The longest of these tests is the CAIT taking a little longer than an hour, so if you have qualms about their meaningfulness just look at one of them yourself.  
 
 # SAT, AGCT
-The 1980 SAT and the Army General Classification Test have a very high g-loading. They are considered the gold standard of free tests. The specific scores are at the bottom of the image and the direct SAT scores are 740 (SAT-M) and 730 (SAT-V). The latter is actually a higher percentile; the verbal part is universally experienced as harder. The score at the top is from a proprietary compositator not entirely transparent to me.  
+[Link](https://cognitivemetrics.co/)  
+The 1980 SAT and the Army General Classification Test have a very high *g*-loading. They are considered the gold standard of free tests. The specific scores are at the bottom of the image and the direct SAT scores are 740 (SAT-M) and 730 (SAT-V). The latter is actually a higher percentile; the verbal part is universally experienced as harder. The score at the top is from a proprietary compositator not entirely transparent to me.  
 
 ![SAT and AGCT](SAT-AGCT.png)
 
 # CAIT
-
+[Link](https://cognitivemetrics.co/)  
+This tests more facets simultaneously (SAT is only verbal, quantitative, and to some extent processing speed since it is timed), but has a lower *g*-loading. The genuinely new aspects tested here are working memory (digit span) and processing speed (symbol search). The relevant number is the FSIQ at the very bottom.
+![CAIT](CAIT.jpeg)
 
 # Other tests
-Okay-ish tests but have different kinds of items:  
-Mensa Norway is progressive matrices, testing abstract reasoning.  
+These are okay-ish tests. Their main value is that they test different kinds of items:  
+[Mensa Norway](https://test.mensa.no/Home/Test/de-DE) is progressive matrices, testing abstract reasoning.  
 ![Mensa Norway](Mensa-Norway.jpeg)  
-The ICAR60 has many more visuo-spatial items than the other tests (shape rotation).  
+The [ICAR60](https://planning.e-psychometrics.com/test/icar60) has many more visual-spatial items than the other tests (shape rotation).  
 ![ICAR60](ICAR60.jpeg)  
+
+And a final one just because I score highest on it.  
+There are no real screenshots for it, but Antjuan Finch provides an [intelligence quicktest](http://antjuanfinch.com/sgiq) (50 items, 12 minutes) and a ["Public Domain Intelligence Test"](http://antjuanfinch.com/pdit) (60 items, 30 minutes). The quicktest only includes quantitative and verbal items; I score 46/50 corresponding to an IQ of 149. The PDIT is one section of verbal items and one of progressive matrices; I score 29/30 on both corresponding to 148 verbal, 142 non-verbal, and an FSIQ of $(0.58(48+42))+100 = 152.2$ ... The test may be inflated at these extremes since this is outside the 95% CI from the more reliable tests at the top. But it could also be the case that the score is skewed *for me in particular* since it tests my three strongest aspects: Verbal, abstract reasoning, and processing speed. If it were an untimed test of visual-spatial ability, like the ICAR60, my score may have been lower even with the same norms.
