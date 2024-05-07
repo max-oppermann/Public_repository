@@ -3,7 +3,7 @@ IQ tests are inherently imprecise with SEs of around 5-10 points, probably more 
 
 # SAT, AGCT
 [Link](https://cognitivemetrics.co/)  
-The 1980 SAT and the Army General Classification Test have a very high *g*-loading. They are considered the gold standard of free tests. The specific scores are at the bottom of the image and the direct SAT scores are 740 (SAT-M) and 730 (SAT-V). The latter is actually a higher percentile; the verbal part is universally experienced as harder. The score at the top is from a proprietary compositator not entirely transparent to me.  
+The 1980 SAT and the Army General Classification Test have a very high *g*-loading. They are considered the gold standard of free tests. The specific scores are at the bottom of the image and the direct SAT scores are 740 (SAT-M) and 730 (SAT-V). The score at the top is from a proprietary compositator not entirely transparent to me. According to the formula in [this article](https://pumpkinperson.com/2016/12/13/converting-pre-1995-sat-scores-to-iq-yet-again/#comments:~:text=Calculating%20full%2Dscale,of%20ceiling%20bumping.) the Full-Scale IQ (FSIQ) from those SAT scores would be $\left(\dfrac{1470-787}{198}\right)\times 15 + 100 \approx 152$ rather than 147. It probably doesn't matter to much in the grand scheme of things.  
 
 ![SAT and AGCT](SAT-AGCT.png)
 
