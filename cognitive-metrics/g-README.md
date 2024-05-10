@@ -3,7 +3,7 @@ IQ tests are inherently imprecise with SEs of around 5-10 points, probably more 
 
 The score in this composite is from [this](https://compositator.com/) *g*-estimator (click the first square labeled "Big 'g' Estimator"). Some more details on specific scores below.  
 
-![Composite Score](Total-estimate.png)  
+![Composite Score](total-estimate.png)  
 
 # SAT, AGCT, GRE
 [Link](https://cognitivemetrics.co/)  
