@@ -14,7 +14,7 @@ The 1980 SAT, the Army General Classification Test, and the old GRE have a very 
 # CAIT
 [Link](https://cognitivemetrics.co/)  
 This tests more facets simultaneously (SAT is only verbal, quantitative, and to some extent processing speed since it is timed), but has a lower *g*-loading. The genuinely new aspects tested here are working memory (digit span) and processing speed (symbol search). The relevant number is the FSIQ at the very bottom.
-![CAIT](CAIT.jpeg)
+![CAIT](CAIT-score.jpeg)
 
 # Other tests
 These are okay-ish tests. Their main value is that they test different kinds of items. They usually have no known *g*-loadings and reliabilities (not even estimates) which is why they don't feature in the composite at the top:  
