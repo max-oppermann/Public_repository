@@ -1,4 +1,4 @@
-Meine allgemeinen quantitativen Fähigkeiten sind etwa im <ins>**99.87ten Perzentil**</ins>. In einem Raum mit 1000 Menschen, sollten ca. 1,3 bessere allgemeine quantitative Fähigkeiten besitzen.  
+Meine allgemeinen quantitativen Fähigkeiten sind etwa im <ins>**99.87ten Perzentil**</ins>. In einem Raum mit 1000 Menschen sollten ca. 1,3 von ihnen allgemeine quantitative Fähigkeiten besitzen, die wenigstens so gut sind, wie meine.  
 
 Allgemeine quantitative Fähigkeiten werden im SAT und GRE getestet. “Allgemeine” Fähigkeiten werden getestet, da keine komplizierte Mathematik gewusst werden muss; 
 es geht darum, zügig die Struktur eines quantitativen Problems zu verstehen und dann Grundrechenarten und basale Geometrie anzuwenden, die jeder Testteilnehmer wissen sollte.  
