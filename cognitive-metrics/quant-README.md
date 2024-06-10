@@ -21,8 +21,8 @@ Für ältere Versionen dieser Tests ist das “g-loading” bekannt, also die Ko
 Deshalb kann man unter https://cognitivemetrics.co/ eine Schätzung des eigenen IQs durch die Performance bei diesen Tests ermitteln.  
 Andersrum kann ich dann aber aus diesem Score den Perzentilrang meiner quantitativen Fähigkeiten ableiten. Um aus einem Test mit bekanntem g-loading einen IQ abzuleiten, benutzt man folgende Formel:  
 $\left( \dfrac{\text{eigener Score}-\overline{\text{Test}} }{\text{SD vom Test} } \right) \times \text{g-loading} \times \text{SD vom IQ} + \overline{\text{IQ}}$  
-Der Ausdruck in der Klammer ist der $z$-score des eigenen Testergebnis, der in Standardabweichungen auf der IQ-Skala übersetzt werden muss (per Definition ist die SD für IQ 15 und der Durchschnitt 100). 
-Um nun an den $z$-score meines Ergebnisses für die quantitativen Tests unten zu kommen, kann ich einfach das g-loading der Tests (SAT-M: 0.85. GRE-Q: 0.83) und das IQ-Ergebnis einsetzen und die Formel umstellen:  
+Der Ausdruck in der Klammer ist der $z$-Score des eigenen Testergebnis, der in Standardabweichungen auf der IQ-Skala übersetzt werden muss (per Definition ist die SD für IQ 15 und der Durchschnitt 100). 
+Um nun an den $z$-Score meines Ergebnisses für die quantitativen Tests unten zu kommen, kann ich einfach das g-loading der Tests (SAT-M: 0.85. GRE-Q: 0.83) und das IQ-Ergebnis einsetzen und die Formel umstellen:  
 SAT-M:  
 $z \times 0.85 \times 15 + 100 = 139 \implies z = \dfrac{39}{0.85 \times 15} \implies z \approx 3.059$, was etwa dem 99.89ten Perzentil entspricht.  
 GRE-Q:  
