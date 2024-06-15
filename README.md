@@ -8,7 +8,7 @@ What it says on the tin; updated as I progress through the book. For more, see t
 
 # Algorithms I
 
-Weeks 1–5 of the Coursera Cours “Algorithms, Part I” by Robert Sedgewick entail exercises necessary to pass the course (at least 80% per exercise according to the autograder). Getting a certificate for passing the course costs money, so this is my proof I finished the course. The entire course is in Java, which I had never used before and would like to never use again (except for Part II, maybe). Luckily it is relatively similar to C, in my opinion.  
+Weeks 1–5 of the Coursera Course “Algorithms, Part I” by Robert Sedgewick entail exercises necessary to pass the course (at least 80% per exercise according to the autograder). Getting a certificate for passing the course costs money, so this is my proof I finished the course. The entire course is in Java, which I had never used before and would like to never use again (except for Part II, maybe). Luckily it is relatively similar to C, in my opinion.  
 Week 1: Percolation. 100%. [specification](https://coursera.cs.princeton.edu/algs4/assignments/percolation/specification.php)  
 Week 2: Deques and Randomized Queues. 98%. [specification](https://coursera.cs.princeton.edu/algs4/assignments/queues/specification.php)  
 Week 3: Collinear Points. 95% (pretty hard!). [specification](https://coursera.cs.princeton.edu/algs4/assignments/collinear/specification.php)  
