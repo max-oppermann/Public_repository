@@ -1,6 +1,6 @@
 The relevant entries are the directories CS50P, CS50x, Princeton Algorithms I, and the file Exercises-ISLP.ipynb.  
 
-If you're a potential employer, you may be interested in my [Big Five traits](https://www.personalityassessor.com/ipip300/results=1535620-821/). If you are also interested in my *g*eneral cognitive ability, the `g-README` in the `cognitive-metrics` directory could be interesting.
+If you're a potential employer, you may be interested in my [Big Five traits](https://www.personalityassessor.com/ipip300/results=1535620-821/). If you are also interested in my *g*eneral cognitive ability, [this](../cognitive-metrics/g-README.md) may be interesting.
 
 # Exercises for ISLP
 
