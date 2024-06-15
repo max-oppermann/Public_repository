@@ -1,4 +1,4 @@
-Meine allgemeinen quantitativen Fähigkeiten sind etwa im <ins>**99.87ten Perzentil**</ins>. Das entspricht einer Frequenz von etwa 1/750: In einem Raum mit 1000 Menschen sollten ca. 1,3 von ihnen allgemeine quantitative Fähigkeiten besitzen, die wenigstens so gut sind, wie meine. Für meine vollständigen allgemeinen Fähigkeiten – inklusive verbaler, figuraler etc. – siehe [hier](g-README.md).  
+Meine allgemeinen quantitativen Fähigkeiten sind etwa im <ins>**99.87ten Perzentil**</ins>. Das entspricht einer Frequenz von etwa 1/750: In einem Raum mit 1000 Menschen sollten ca. 1.3 von ihnen allgemeine quantitative Fähigkeiten besitzen, die wenigstens so gut sind, wie meine. Für meine vollständigen allgemeinen Fähigkeiten – inklusive verbaler, figuraler etc. – siehe [hier](g-README.md).  
 
 ### Ergebnis
 SAT-M:  
