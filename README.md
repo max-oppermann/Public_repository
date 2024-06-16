@@ -4,7 +4,7 @@ If you're a potential employer, you may be interested in my [Big Five traits](ht
 
 # Exercises for ISLP
 
-What it says on the tin; updated as I progress through the book. For more, see the notebook. The table of contents isn’t functional on GitHub; use https://nbviewer.org/ and paste the link to the notebook within my repository, i. e., https://github.com/max-oppermann/Public_repository/blob/master/Exercises-ISLP.ipynb, to have a functional  ToC (or just download the file and open it in JupyterLabs).
+What it says on the tin; updated as I progress through the book. For more, see the notebook. The table of contents isn’t functional on GitHub; use https://nbviewer.org/ and paste the link to the notebook within my repository, i. e., https://github.com/max-oppermann/Public_repository/blob/master/Exercises-ISLP.ipynb, to have a functional  ToC.
 
 # Algorithms I
 
