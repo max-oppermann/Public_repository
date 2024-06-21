@@ -1,7 +1,5 @@
-*If in doubt, try it out.* The longest of these tests is the CAIT taking a little longer than an hour, so if you have qualms about their meaningfulness just look at one of them yourself.  
-IQ tests are inherently imprecise with SEs of around 5-10 points, probably more in the tails. An IQ of 135 has a frequency of ~ 1/100, 140 ~ 1/260, 145 ~ 1/740, 150 ~ 1/2300.
-
-The score in this composite is from [this](https://compositator.com/) *g*-estimator (click the first square labeled "Big 'g' Estimator"). "Composite" here means Full Scale IQ (FSIQ).  
+The score in this composite is from [this](https://compositator.com/) *g*-estimator (click the first square labeled "Big 'g' Estimator"). "Composite" here means Full Scale IQ (FSIQ) which is the relevant number.  
+IQ tests are inherently imprecise with SEs of around 5-10 points, probably more in the tails. An IQ of 135 has a frequency of ~ 1/100, 140 ~ 1/260, 145 ~ 1/740, 150 ~ 1/2300.  
 
 ![Composite Score](total-estimate.png)  
 You may wonder why the composite is higher than the average of the scores and higher even than the highest subscore. Averaging scores would only make sense if they had a correlation of 1 since they'd essentially be different observations of the same thing. But they are not perfectly correlated, meaning they test slightly different things, meaning the underlying *general* ability must be higher than the ability in the specific subtests. Imagine measuring general athleticism via performance in gymnastics and long-distance running. Since the general athletic ability gets diluted by other factors in the specific activities, it will be higher than is measured by those two individual performances.  
