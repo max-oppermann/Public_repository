@@ -4,7 +4,7 @@ If you're a potential employer, you may be interested in my [Big Five traits](ht
 
 # Exercises for ISLP
 
-What it says on the tin; the programming exercises from the book "An Introduction to Statistical Learning with Applications in Python" by Hastie, Tibshirani et al. For more, see the notebook. The table of contents isn’t functional on GitHub; use https://nbviewer.org/ and paste the link to the notebook within my repository, i. e., https://github.com/max-oppermann/Public_repository/blob/master/Exercises-ISLP.ipynb, to have a functional  ToC.
+What it says on the tin; the programming exercises from the book "An Introduction to Statistical Learning with Applications in Python" by Hastie, Tibshirani et al. For more, see the notebook. The table of contents isn’t functional on GitHub; click [here](https://nbviewer.org/github/max-oppermann/Public_repository/blob/master/Exercises-ISLP.ipynb) instead. If that does not work, use https://nbviewer.org/ and paste the link to the notebook within my repository, i. e., https://github.com/max-oppermann/Public_repository/blob/master/Exercises-ISLP.ipynb, to have a functional  ToC.
 
 # Algorithms I
 
