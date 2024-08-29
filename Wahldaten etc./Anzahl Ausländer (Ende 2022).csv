@@ -1,0 +1,38 @@
+12400-00-01: Bevölkerung nach Migrationsstatus, Geschlecht und Geburtsort (nur Stadt Bremen)
+Gebietsschlüssel;Gebietseinheit;Zeit;Migrationsstatus 1);Bevölkerung 2);Bevölkerung 2);Bevölkerung 2)
+;;;;insgesamt;insgesamt;insgesamt
+;;;;insgesamt;und zwar;und zwar
+;;;;;weiblich;unter 18 Jahre
+04011;Stadt Bremen;2022-12-31;Ausländer;119210;57068;24378
+0401111;Mitte (Stadtteil);2022-12-31;Ausländer;4467;1944;608
+0401112;Häfen (Stadtteil);2022-12-31;Ausländer;62;15;9
+0401121;Neustadt (Stadtteil);2022-12-31;Ausländer;9373;4212;1342
+0401123;Obervieland (Stadtteil);2022-12-31;Ausländer;5633;2825;1118
+0401124;Huchting (Stadtteil);2022-12-31;Ausländer;8481;4184;2360
+0401125;Woltmershausen (Stadtteil);2022-12-31;Ausländer;2882;1312;512
+0401131;Östliche Vorstadt (Stadtteil);2022-12-31;Ausländer;3649;1637;319
+0401132;Schwachhausen (Stadtteil);2022-12-31;Ausländer;4175;2247;672
+0401133;Vahr (Stadtteil);2022-12-31;Ausländer;7020;3595;1561
+0401134;Horn-Lehe (Stadtteil);2022-12-31;Ausländer;4733;2247;578
+0401136;Oberneuland (Stadtteil);2022-12-31;Ausländer;1134;626;249
+0401137;Osterholz (Stadtteil);2022-12-31;Ausländer;8543;4313;1994
+0401138;Hemelingen (Stadtteil);2022-12-31;Ausländer;9853;4582;2006
+0401142;Findorff (Stadtteil);2022-12-31;Ausländer;3423;1669;427
+0401143;Walle (Stadtteil);2022-12-31;Ausländer;7992;3677;1414
+0401144;Gröpelingen (Stadtteil);2022-12-31;Ausländer;14285;6434;2946
+0401151;Burglesum (Stadtteil);2022-12-31;Ausländer;5582;2771;1226
+0401152;Vegesack (Stadtteil);2022-12-31;Ausländer;9728;4611;2430
+0401153;Blumenthal (Stadtteil);2022-12-31;Ausländer;7627;3865;2526
+
+*) Die Ergebnisse der Wanderungsstatistik und die Entwicklung des Bevölkerungsstandes ab dem Berichtsjahr 2016 sind aufgrund methodischer Änderungen, technischer Weiterentwicklungen der Datenlieferungen aus dem Meldewesen an die Statistik sowie der Umstellung auf ein neues statistisches Aufbereitungsverfahren nur bedingt mit den Vorjahreswerten vergleichbar.
+
+1) Migrationsstatus aus dem Einwohnermelderegister mit dem KOSIS-Programm MigraPro abgeleitet und an die Eckwerte der Bevölkerungsfortschreibung auf Basis der Volkszählung 1987 (bis 2010) bzw. des Zensus 2011.
+
+2) Quelle: Schätzung; Werte aus dem Einwohnermelderegister an die Eckwerte der Bevölkerungsfortschreibung angepasst.
+
+3) Einschließlich deutsche Kinder unter 18 Jahren, die selbst nicht eingebürgert wurden, jedoch mindestens ein Elternteil Ausländer oder Eingebürgerter ist.
+
+4) Einschließlich deutsche Kinder unter 18 Jahren, die selbst keine Aussiedler sind, jedoch beide Eltern Deutsche und mindestens ein Elternteil Aussiedler ist.
+
+
+© Statistisches Landesamt Bremen 
