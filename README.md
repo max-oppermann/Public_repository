@@ -1,12 +1,12 @@
-The relevant entries are the directories `CS50P`, `CS50x`, `Princeton Algorithms I`, and the files `Exercises-ISLP.ipynb` and `Wahldaten_Analyse.ipynb`.  
+The relevant entries are the directories `CS50P`, `CS50x`, `Princeton Algorithms I`, `Wahldaten-Analyse`, and the files `Exercises-ISLP.ipynb`.  
 
 If you're a potential employer, you may be interested in my [Big Five traits](Big-Five/README-personality.md). If you are also interested in my *g*eneral cognitive ability, [this](cognitive-metrics/README-g.md) may be interesting.
 
-# Wahldaten Analyse
+# Wahldaten-Analyse
 
-Dieses Notebook enthält eine kleine Beispielanalyse der Wahlergebnisse im Lande Bremen der Bundestagswahl 2021 auf Stadtteilebene. Es geht mir v. a. darum, eine breite Palette an statistischem Wissen zu demonstrieren; die tatsächlichen Ergebnisse der Analyse sind nachrangig. Man kann sich das hier in GitHub angucken, aber die Hyperlinks vom und zum Inhaltsverzeichnis funktionieren dann nicht. Man klicke stattdessen [hier](https://nbviewer.org/github/max-oppermann/Public_repository/blob/master/Wahldaten_Analyse.ipynb) oder, wenn das nicht funktioniert, gehe zu https://nbviewer.org/ und füge den Link zum Notebook in meinem Repository ein (dieser hier: https://github.com/max-oppermann/Public_repository/blob/master/Wahldaten_Analyse.ipynb).
+Dieser Ordern enthält ein Notebook, das eine kleine Beispielanalyse der Wahlergebnisse im Lande Bremen der Bundestagswahl 2021 auf Stadtteilebene beschreibt. Es geht mir v. a. darum, eine breite Palette an statistischem Wissen zu demonstrieren; die tatsächlichen Ergebnisse der Analyse sind nachrangig. Man kann sich das hier in GitHub angucken, aber die Hyperlinks vom und zum Inhaltsverzeichnis funktionieren dann nicht. Man klicke stattdessen [hier](https://nbviewer.org/github/max-oppermann/Public_repository/blob/master/Wahldaten-Analyse/Wahldaten_Analyse.ipynb) oder, wenn das nicht funktioniert, gehe zu https://nbviewer.org/ und füge den Link zum Notebook in meinem Repository ein (dieser hier: https://github.com/max-oppermann/Public_repository/blob/master/Wahldaten-Analyse/Wahldaten_Analyse.ipynb).
 
-This notebook contains (exclusively in German!) an example analysis of the 2021 federal election results in Germany's federal state of Bremen using county-level data. It's mostly about showcasing a broad range of statistical knowledge; the actual results of the analysis are secondary.
+This directory contains a  notebook (exclusively in German!) with an example analysis of the 2021 federal election results in Germany's federal state of Bremen using county-level data. It's mostly about showcasing a broad range of statistical knowledge; the actual results of the analysis are secondary.
 
 # Exercises for ISLP
 
