@@ -1,6 +1,6 @@
 The relevant entries are the directories `CS50P`, `CS50x`, `Princeton Algorithms I`, `Wahldaten-Analyse`, and the files `Exercises-ISLP.ipynb`.  
 
-If you're a potential employer, you may be interested in my [Big Five traits](Big-Five/README-personality.md). If you are also interested in my *g*eneral cognitive ability, [this](cognitive-metrics/README-g.md) may be interesting.
+If you're a potential employer, you may be interested in my [Big Five traits](Big-Five/README.md). If you are also interested in my *g*eneral cognitive ability, [this](cognitive-metrics/README-g.md) may be interesting.
 
 # Wahldaten-Analyse
 
