@@ -2,20 +2,20 @@ From the most comprehensive (free) Big Five test: [here](https://www.personality
 
 Aus dem umfassendsten (gratis) Test der Big Five: [hier](https://www.personalityassessor.com/ipip-300/). Weitergehende Erklärung im [Wiki](https://de.wikipedia.org/wiki/Big_Five_(Psychologie)). Untereigenschaften weiter unten.
 
-![Big-Five](bigfive.jpeg)
+<img src="bigfive.jpeg" width="50%"/>
 
 
 Openness/Offenheit  
-![openness](openness.jpeg)
+<img src="openness.jpeg" width="50%"/>
 
 Conscientiousness/Gewissenhaftigkeit  
-![consc](conscientiousness.jpeg)
+<img src="conscientiousness.jpeg" width="50%"/>
 
 Extraversion  
-![extraversion](extraversion.jpeg)  
+<img src="extraversion.jpeg" width="50%"/>
 
 Agreeableness/Verträglichkeit  
-![agreeableness](agreeableness.jpeg)
+<img src="agreeableness.jpeg" width="50%"/>
 
 Neuroticism/Neurotizismus  
-![neuroticism](neuroticism.jpeg)
+<img src="neuroticism.jpeg" width="50%"/>
