@@ -1,6 +1,4 @@
-The relevant entries are the directories `CS50P`, `CS50x`, `Princeton Algorithms I`, `Wahldaten-Analyse`, and the files `Exercises-ISLP.ipynb`.  
-
-If you're a potential employer, you may be interested in my [Big Five traits](cognitive-metrics/Big-Five/README.md). If you are also interested in my *g*eneral cognitive ability, [this](cognitive-metrics/README-g.md) may be interesting.
+If you're a potential employer, you may be interested in my [Big Five traits](cognitive-metrics/Big-Five/README.md). If you are interested in my *g*eneral cognitive ability, [this](cognitive-metrics/README-g.md) may be interesting. I can also predict [my percentile rank](cognitive-metrics/README-quant.md) in job performance directly (with some error).
 
 # Wahldaten-Analyse
 
@@ -10,7 +8,7 @@ This directory contains a  notebook (exclusively in German!) with an example ana
 
 # Exercises for ISLP
 
-What it says on the tin; the programming exercises from the book "An Introduction to Statistical Learning with Applications in Python" by Hastie, Tibshirani et al. For more, see the notebook. The table of contents isn’t functional on GitHub; click [here](https://nbviewer.org/github/max-oppermann/Public_repository/blob/master/Exercises-ISLP.ipynb) instead. If that does not work, use https://nbviewer.org/ and paste the link to the notebook within my repository, i. e., https://github.com/max-oppermann/Public_repository/blob/master/Exercises-ISLP.ipynb, to have a functional  ToC.
+What it says on the tin; the programming exercises from the book "An Introduction to Statistical Learning with Applications in Python" by Hastie, Tibshirani et al. For more, see the notebook (the free floating file `Exercises-ISLP.ipynb`). The table of contents isn’t functional on GitHub; click [here](https://nbviewer.org/github/max-oppermann/Public_repository/blob/master/Exercises-ISLP.ipynb) instead. If that does not work, use https://nbviewer.org/ and paste the link to the notebook within my repository, i. e., https://github.com/max-oppermann/Public_repository/blob/master/Exercises-ISLP.ipynb, to have a functional  ToC.
 
 # Algorithms I
 
