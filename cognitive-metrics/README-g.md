@@ -1,4 +1,4 @@
-The score in a composite is from [here](https://cognitivemetrics.co/), composing the individual scores below which themselves are derived from the tests  even further below (SAT, AGCT, GRE, CAIT) weighted by their *g*-loading and reliability. IQ tests are inherently imprecise with SEs of around 5-10 points, probably more in the tails.  
+The score is a composite from [here](https://cognitivemetrics.co/), composing the individual scores below which themselves are derived from the tests even further below (SAT, AGCT, GRE, CAIT) weighted by their *g*-loading and reliability. IQ tests are inherently imprecise with SEs of around 5-10 points, probably more in the tails.  
 An IQ of 135 has a frequency of ~ 1/100, 140 ~ 1/260, 145 ~ 1/740, 150 ~ 1/2300.   
 ![Composite Score](total-estimate.png)  
 Left to right the abbreviations stand for: Verbal Comprehension Index, Fluid Reasoning Index, Quantitative Intelligence Index, Visual Spatial Index, Working Memory Index, Processing Speed Index.  
