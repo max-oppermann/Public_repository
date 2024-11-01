@@ -14,7 +14,7 @@ The multiple correlation coefficient for predicting job performance from GMA and
 $2.189 \pm (1.96\times \sqrt{1-0.60^2})$  
 which yields a 95% confidence interval of $[0.621,3.757]$ for the z-score, corresponding to a job performance percentile range of $[73.27, 99.99]$.
 
-<div style="width: 33%; border-top: 1px solid; margin-top: 20px;"></div>
+---
 <small>
 <sup>1</sup>Table 1 in: Schmidt, F., Hunter, J. “The Validity and Utility of Selection Methods in Personnel Psychology: Practical and Theoretical Implications of 85 Years of Research Findings.” <i>Psychological Bulletin</i>, 124(2), 1998. 262–274.
 <br><br>
