@@ -1,4 +1,8 @@
-If you're a potential employer, you may be interested in my [Big Five traits](cognitive-metrics/Big-Five/README.md). If you are interested in my *g*eneral cognitive ability, [this](cognitive-metrics/README-g.md) may be interesting. I can also predict [my percentile rank](cognitive-metrics/README-quant.md) in job performance directly (with some error).
+If you're a potential employer, you may be interested in my [Big Five traits](cognitive-metrics/Big-Five/README.md). If you are interested in my *g*eneral cognitive ability, [this](cognitive-metrics/README-g.md) may be interesting. I can also predict [my percentile rank](cognitive-metrics/README-quant.md) in job performance directly (with some error, 98.6th percentile in high complexity jobs, somewhat lower in lower complexity jobs).
+
+# Misc. Projects
+
+Programs of varying length and complexity without overarching theme. Simulating probability problems (e. g., Monty Hall), smaller data analyses, reinforcing some programming concept, $\dots$
 
 # Wahldaten-Analyse
 
