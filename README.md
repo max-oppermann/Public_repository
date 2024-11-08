@@ -10,6 +10,13 @@ Dieser Ordern enthält ein Notebook, das eine kleine Beispielanalyse der Wahlerg
 
 This directory contains a  notebook (exclusively in German!) with an example analysis of the 2021 federal election results in Germany's federal state of Bremen using county-level data. It's mostly about showcasing a broad range of statistical knowledge; the actual results of the analysis are secondary.
 
+# Anki Decks  
+
+Some flashcard decks for the flashcard learning app Anki. The field "Source" will usually give the source as "author, *title of the book*, [number of chapter] (title of the chapter)". For example: "Hastie; Tibshirani, *Introduction to Statistical Learning*, 3 (Linear Regression)". Sometimes there are additions like "Lab" for the labs in ISLP or "Ex. [number]" for the exercises in Blitzstein.  
+- <u>Blitzstein, Probability</u>. Enormous! Around 1400 notes and 1600 cards. The entire textbook "Introduction to Probability" by Blitzstein and Hwang; i. e., practically all theorems and definitions, almost all proofs for those theorems, almost all examples, the large majority of exercises and solutions. I left out exercises that only seemed like tedious calculations or were repeating a concept already covered sufficiently (in my estimation).  
+- <u>ISLP</u>. Around 600 cards and notes. The video lectures, book chapters, labs, and some bits from the programming exercises from "An Introduction to Statistical Learning with Applications in Python" by Hastie, Tibshirani et al.  
+- <u>Freedman, Statistical Models</u>. Around 250 notes and 350 cards. A more superficial treatment of "Statistical Models" by David Freedman (not to be confused with "Statistics" by Freedman, Purves, and Pisani). Exercises only if solutions were available.
+
 # Exercises for ISLP
 
 What it says on the tin; the programming exercises from the book "An Introduction to Statistical Learning with Applications in Python" by Hastie, Tibshirani et al. For more, see the notebook (the free floating file `Exercises-ISLP.ipynb`). The table of contents isn’t functional on GitHub; click [here](https://nbviewer.org/github/max-oppermann/Public_repository/blob/master/Exercises-ISLP.ipynb) instead. If that does not work, use https://nbviewer.org/ and paste the link to the notebook within my repository, i. e., https://github.com/max-oppermann/Public_repository/blob/master/Exercises-ISLP.ipynb, to have a functional  ToC.
