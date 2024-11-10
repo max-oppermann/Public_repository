@@ -4,9 +4,9 @@ If you're a potential employer, you may be interested in my [Big Five traits](co
 
 My most recent commits. Programs of varying length and complexity without overarching theme.  
 
-`matching_cards.py` simulates matching cards problem.  
-`monty_hall.py` let's you play the classic Monty Hall set up. 
-`uniform_universality.py` demonstrates universality of the Uniform.
+`matching_cards.py` simulates matching cards problem with 100 cards.  
+`monty_hall.py` let's you play the classic Monty Hall set up.  
+`uniform_universality.py` demonstrates the 'universality of the Uniform.'  
 
 # Wahldaten-Analyse
 
