@@ -2,8 +2,11 @@ If you're a potential employer, you may be interested in my [Big Five traits](co
 
 # Projects
 
-My most recent commits.  
-Programs of varying length and complexity without overarching theme. Simulating probability problems (e. g., Monty Hall), smaller data analyses, reinforcing some programming concept, $\dots$
+My most recent commits. Programs of varying length and complexity without overarching theme.  
+
+`matching_cards.py` simulates matching cards problem.  
+`monty_hall.py` let's you play the classic Monty Hall set up. 
+`uniform_universality.py` demonstrates universality of the Uniform.
 
 # Wahldaten-Analyse
 
