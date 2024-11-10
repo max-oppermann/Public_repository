@@ -13,9 +13,9 @@ This directory contains a  notebook (exclusively in German!) with an example ana
 # Anki Decks  
 
 Some flashcard decks for the flashcard learning app Anki. The field "Source" will usually give the source as "author, *title of the book*, [number of chapter] (title of the chapter)". For example: "Hastie; Tibshirani, *Introduction to Statistical Learning*, 3 (Linear Regression)". Sometimes there are additions like "Lab" for the labs in ISLP or "Ex. [number]" for the exercises in Blitzstein.  
-- <u>Blitzstein, Probability</u>. Enormous! Around 1400 notes and 1600 cards. The entire textbook "Introduction to Probability" by Blitzstein and Hwang; i. e., practically all theorems and definitions, almost all proofs for those theorems, almost all examples, the large majority of exercises and solutions. I left out exercises that only seemed like tedious calculations or were repeating a concept already covered sufficiently (in my estimation).  
-- <u>ISLP</u>. Around 600 cards and notes. The video lectures, book chapters, labs, and some bits from the programming exercises from "An Introduction to Statistical Learning with Applications in Python" by Hastie, Tibshirani et al.  
-- <u>Freedman, Statistical Models</u>. Around 250 notes and 350 cards. A more superficial treatment of "Statistical Models" by David Freedman (not to be confused with "Statistics" by Freedman, Purves, and Pisani). Exercises only if solutions were available.
+- *Blitzstein, Probability*. Enormous! Around 1400 notes and 1600 cards. The entire textbook "Introduction to Probability" by Blitzstein and Hwang; i. e., practically all theorems and definitions, almost all proofs for those theorems, almost all examples, the large majority of exercises and solutions. I left out exercises that only seemed like tedious calculations or were repeating a concept already covered sufficiently (in my estimation).  
+- *ISLP*. Around 600 cards and notes. The video lectures, book chapters, labs, and some bits from the programming exercises from "An Introduction to Statistical Learning with Applications in Python" by Hastie, Tibshirani et al.  
+- *Freedman, Statistical Models*. Around 250 notes and 350 cards. A more superficial treatment of "Statistical Models" by David Freedman (not to be confused with "Statistics" by Freedman, Purves, and Pisani). Exercises only if solutions were available.
 
 # Exercises for ISLP
 

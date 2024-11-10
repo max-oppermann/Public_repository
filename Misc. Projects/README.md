@@ -6,3 +6,10 @@ Solving this analytically gives $1-\frac1e\approx0.63$, which is in fact what th
 
 #### `monty_hall.py`  
 Simulates the classic Monty Hall problem, allowing you to play multiple rounds. The car is randomly placed behind one of three doors, you are asked to choose one. After your choice, Monty reveals a non-car door, and you are given the option to switch. The program tracks your wins and losses, and also compares your results with theoretical probabilities of winning by always staying or always switching (simulates 1000 rounds of always staying/switching). The simulation continues until you decide to stop.
+
+#### `uniform_universality.py`  
+Demonstrates the universality of the Uniform distribution:
+- Inverse CDF + Uniform: By transforming uniformly random variables – $\text{Unif}(0,1)$ – through the inverse CDF of a chosen distribution, it generates random variables that follow the target distribution's shape.
+- CDF + r.v.s of the same distribution: By applying the CDF of a chosen distribution to its own random variables, it produces uniformly random values on (0,1).  
+
+Supports four distributions: Logistic, standard Normal, Exponential(1), and Rayleigh. It compares the theoretical PDF with a simulation generated using the transformation outlined above via visual plots of the results.

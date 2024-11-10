@@ -6,7 +6,7 @@ chose the car door initially.
 Demonstrates to those without faith in conditional probability that switching > staying.
 
 Original R-code from:
-Blitzstein; Hwang "Introduction to probability." 2019. p. 82–83.
+Blitzstein; Hwang "Introduction to Probability." 2019. p. 82–83.
 Their code only lets you play one round and does not give you your win/loss ratio,
 but the code for getting the theoretical proportions (in my main() function) is theirs
 almost verbatim.
