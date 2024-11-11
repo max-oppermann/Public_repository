@@ -7,6 +7,7 @@ My most recent commits. Programs of varying length and complexity without overar
 `matching_cards.py` simulates matching cards problem with 100 cards.  
 `monty_hall.py` let's you play the classic Monty Hall set up.  
 `uniform_universality.py` demonstrates the 'universality of the Uniform.'  
+`poisson_process.py` simulates and plots a Poisson process. 
 
 # Wahldaten-Analyse
 
