@@ -8,7 +8,7 @@ Solving this analytically gives $1-\frac1e\approx0.63$, which is in fact what th
 Simulates the classic Monty Hall problem, allowing you to play multiple rounds. The car is randomly placed behind one of three doors, you are asked to choose one. After your choice, Monty reveals a non-car door, and you are given the option to switch. The program tracks your wins and losses, and also compares your results with theoretical probabilities of winning by always staying or always switching (simulates 1000 rounds of always staying/switching). The simulation continues until you decide to stop.
 
 #### `poisson_process.py`  
-Simulates and visualizes a Poisson process using exponential interarrival times. The process is has an event arrival rate $\lambda$ and runs for a specified time interval. The simulation generates interarrival times as i.i.d. $\text{Exponential}(\lambda)$ r.v.s. The cumulative sum of these interarrival times gives the arrival times in the Poisson process, which are then truncated at the specified end time. The arrival times are plotted on a timeline.  
+Simulates and visualizes a Poisson process using exponential interarrival times. The process has an event arrival rate $\lambda$ and runs for a specified time interval. The simulation generates interarrival times as i.i.d. $\text{Exponential}(\lambda)$ r.v.s. The cumulative sum of these interarrival times gives the arrival times in the Poisson process, which are then truncated at the specified end time. The arrival times are plotted on a timeline.  
 The rate and end time can be modified in the command line, they default to 5 and 10 respectively:  
 `python poisson_process.py --rate 10 --end_time 15`
 
