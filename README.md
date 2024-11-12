@@ -4,6 +4,7 @@ If you're a potential employer, you may be interested in my [Big Five traits](co
 
 My most recent commits. Programs of varying length and complexity without overarching theme.  
 
+`gamblers_ruin.py` simulates and plots variations of Gambler's ruin as a Markov chain.  
 `matching_cards.py` simulates matching cards problem with 100 cards.  
 `monty_hall.py` let's you play the classic Monty Hall set up.  
 `uniform_universality.py` demonstrates the 'universality of the Uniform.'  

@@ -1,5 +1,10 @@
 Programs of varying length and complexity without overarching theme.
 
+#### `gamblers_ruin.py`  
+Simulates a setup of the Gambler's Ruin problem as a Markov chain. Two gamblers with each an initial amount of money play a series of rounds with a fixed probability of winning one additional unit of money each round from the other gambler. If gambler A has probability $p$ of winning, gambler B has probability $(1-p)$ of winning; if the total money is $N$ and gambler A starts with $i$, gambler B has $(N-i)$. The simulation assumes the perspective of one of the gamblers. It then tracks the gambler's balance over time until they either go bankrupt (reach 0) or reach the total amount in play (the sum of both gamblers' money), i. e., until the other gambler goes bankrupt. The path of the gambler's money is then plotted.  
+You can run the program from the command line with the following parameters: `N` (total amount of money), `i` (initial amount of money our gambler has), `p` (probability that he wins a round), `nsim` (number of rounds to simulate at the max; game may end before but not after). E. g.:  
+`python gamblers_ruin.py -N 100 -i 50 -p 0.45 --nsim 1000`
+
 #### `matching_cards.py`
 Simulates the matching cards problem: Shuffle a deck of $N$ cards, labeled 1 through $N$. What is the probability that at least one card in position $i$ has $i$ written on it (turning over the seventh card and it has a 7 on it, e. g., but also drawing 1, 2, 3, 4, ...)?  
 Solving this analytically gives $1-\frac1e\approx0.63$, which is in fact what the program converges to for simulating the problem often enough. "Often enough" turns out to be at least 10,000 times. I also plot the convergence behavior from 10 to 10,000 replications.  
