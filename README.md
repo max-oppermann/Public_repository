@@ -9,7 +9,8 @@ My most recent commits. Programs of varying length and complexity without intent
 `metropolis_hastings_normal.py` demonstrates the Normal–Normal conjugacy via MCMC using Metropolis-Hastings.  
 `monty_hall.py` let's you play the classic Monty Hall set up.  
 `uniform_universality.py` demonstrates the 'universality of the Uniform.'  
-`poisson_process.py` simulates and plots a Poisson process. 
+`poisson_process.py` simulates and plots a Poisson process.  
+`winners_curse.py` shows expected payoff for bidding on a mystery prize with variable thresholds for when the bid is accepted. Don't play for threshold $\gt 0.5$.
 
 # Wahldaten-Analyse
 

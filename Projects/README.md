@@ -37,4 +37,13 @@ Demonstrates the universality of the Uniform distribution:
 Supports four distributions: Logistic, standard Normal, Exponential(1), and Rayleigh. It compares the theoretical PDF with a simulation generated using the transformation outlined above via visual plots of the results.
 
 #### `weather_analysis.ipynb`  
-Under construction.
+Under construction.  
+
+#### `winners_curse.py`  
+Simulates a version of Winner's Curse. There is a mystery prize of some value that is at least 0 and at most 1. You can make a bid for the prize, but it is only accepted if it meets a certain threshold of the actual prize value. E. g. if the actual value is 0.75 and the threshold is 2/3, any bid  under 0.5 will be rejected. If the threshold is above 0.5, your best bet is not to play! The expected value of the prize – conditional on the fact that your bid was accepted – is then negative for all positive bids. This maybe counterintuitive result is demonstrated in the program: It accepts a threshold as a command line argument like `python winners_curse.py 0.8` and displays the expected payoffs for various bids between 0 and 1. For thresholds above 0.5, all points are below 0. For a threshold $a \lt 0.5$, the expected payoff peaks at $a$, linearly declining in both directions.  
+Consider a threshold of 2/3. If $W$ is the payoff and $V$ is the value of the prize:  
+$E(W) = E(W|b ≥ 2V/3)P(b ≥ 2V/3) + E(W|b < 2V/3)P(b < 2V/3)$ by law of total expectation.  
+$= E(W|b ≥ 2V/3)P(b ≥ 2V/3) + 0$, since the bet on the right is not accepted.  
+$= E(V −b|b≥2V/3)P(b≥2V/3)$, since $V-b$ is just the payoff.  
+$= (E(V|V ≤3b/2)−b)P(V ≤3b/2)$, by moving stuff around. We can assume $b\lt 2/3$ since betting more than that clearly has negative expectation. Then $V \le 3b/2$ has probability $3b/2$:  
+$E(W)=(3b/4−b)(3b/2)=−3b^2/8$, which is negative except at $b=0$ .
