@@ -41,7 +41,7 @@ Under construction.
 
 #### `winners_curse.py`  
 Simulates a version of Winner's Curse. There is a mystery prize of some value that is at least 0 and at most 1. You can make a bid for the prize, but it is only accepted if it meets a certain threshold of the actual prize value. E. g. if the actual value is 0.75 and the threshold is 2/3, any bid  under 0.5 will be rejected. If the threshold is above 0.5, your best bet is not to play! The expected value of the prize – conditional on the fact that your bid was accepted – is then negative for all positive bids. This maybe counterintuitive result is demonstrated in the program: It accepts a threshold as a command line argument like `python winners_curse.py 0.8` and displays the expected payoffs for various bids between 0 and 1. For thresholds above 0.5, all points are below 0. For a threshold $a \lt 0.5$, the expected payoff peaks at $a$, linearly declining in both directions.  
-Consider a threshold of 2/3. If $W$ is the payoff and $V$ is the value of the prize: (see Blitzstein; Hwang (2019), p. 420)  
+Consider a threshold of 2/3. If $W$ is the payoff, $V$ is the value of the prize, and $b$ is the value of the bid: (see Blitzstein; Hwang (2019), p. 420)  
 $E(W) = E(W|b ≥ 2V/3)P(b ≥ 2V/3) + E(W|b < 2V/3)P(b < 2V/3)$ by law of total expectation.  
 $= E(W|b ≥ 2V/3)P(b ≥ 2V/3) + 0$, since the bet on the right is not accepted.  
 $= E(V −b|b≥2V/3)P(b≥2V/3)$, since $V-b$ is just the payoff.  
