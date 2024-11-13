@@ -70,8 +70,8 @@ def main(total_amount: int, initial_amount: int, prob: float, num_sim: int):
     if total_amount <= 20:
         ax.set_yticks(np.arange(0, total_amount + 1, 1))
     # zoom in if spread in MC small relative to possible range
-    if upper_end - lower_end <= 20 and total_amount >= 60:
-        ax.set_ylim(np.max(lower_end - 5, 0), np.min(upper_end + 5, 0))
+    if upper_end - lower_end <= total_amount / 3 and total_amount >= 60:
+        ax.set_ylim(np.max(lower_end - 5, 0), np.min(upper_end + 5, total_amount))
     else:
         ax.set_ylim(0, total_amount)
     ax.set_xlim(0, stable_index + 1)
