@@ -2,10 +2,11 @@ If you're a potential employer, you may be interested in my [Big Five traits](co
 
 # Projects
 
-My most recent commits. Programs of varying length and complexity without overarching theme.  
+My most recent commits. Programs of varying length and complexity without intentional theme (currently the theme is probability theory).  
 
 `gamblers_ruin.py` simulates and plots variations of Gambler's ruin as a Markov chain.  
 `matching_cards.py` simulates matching cards problem with 100 cards.  
+`metropolis_hastings_normal.py` demonstrates the Normal–Normal conjugacy via MCMC using Metropolis-Hastings.  
 `monty_hall.py` let's you play the classic Monty Hall set up.  
 `uniform_universality.py` demonstrates the 'universality of the Uniform.'  
 `poisson_process.py` simulates and plots a Poisson process. 
