@@ -82,7 +82,7 @@ def main(total_amount: int, initial_amount: int, prob: float, num_sim: int):
     plt.show()
 
 
-def markov_chain_array(total_amount: int, initial_amount: int, prob: int, num_sim: int) -> np.ndarray:
+def markov_chain_array(total_amount: int, initial_amount: int, prob: float, num_sim: int) -> np.ndarray:
     """Simulates the Markov chain representing the gambler's money over time.
 
     Args:
@@ -120,7 +120,7 @@ def game_over_index(m_c: np.ndarray, total_amount: int) -> int:
         int: Index at which the game ends (when 0 or total_amount is reached).
     """
     # condition in argmax gives an array of 0s and 1s
-    # the index of the first of those gets returned by design of argmax. 
+    # the index of the first 1 gets returned by design of argmax.
     # else condition makes sure the one that does not occur gets a larger number
     first_min_index = np.argmax(m_c == 0) if np.any(m_c == 0) else len(m_c)
     first_max_index = np.argmax(m_c == total_amount) if np.any(m_c == total_amount) else len(m_c)
