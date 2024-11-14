@@ -1,4 +1,4 @@
-Programs of varying length and complexity without intentional theme (currently the theme is probability theory).
+Programs of varying length and complexity with the theme of probability theory.
 
 #### `gamblers_ruin.py`  
 Simulates a setup of the Gambler's Ruin problem as a Markov chain. Two gamblers with each an initial amount of money play a series of rounds with a fixed probability of winning one additional unit of money each round from the other gambler. If gambler A has probability $p$ of winning, gambler B has probability $(1-p)$ of winning; if the total money is $N$ and gambler A starts with $i$, gambler B has $(N-i)$. The simulation assumes the perspective of one of the gamblers. It then tracks the gambler's balance over time until they either go bankrupt (reach 0) or reach the total amount in play (the sum of both gamblers' money), i. e., until the other gambler goes bankrupt. The path of the gambler's money is then plotted.  
@@ -41,9 +41,6 @@ Demonstrates the universality of the Uniform distribution:
 - CDF + r.v.s of the same distribution: By applying the CDF of a chosen distribution to its own random variables, it produces uniformly random values on (0,1).  
 
 Supports four distributions: Logistic, standard Normal, Exponential(1), and Rayleigh. It compares the theoretical PDF with a simulation generated using the transformation outlined above via visual plots of the results.
-
-#### `weather_analysis.ipynb`  
-Under construction.  
 
 #### `winners_curse.py`  
 Simulates a version of Winner's Curse. There is a mystery prize of some value that is at least 0 and at most 1. You can make a bid for the prize, but it is only accepted if it meets a certain threshold of the actual prize value. E. g. if the actual value is 0.75 and the threshold is 2/3, any bid  under 0.5 will be rejected. If the threshold is above 0.5, your best bet is not to play! The expected value of the prize – conditional on the fact that your bid was accepted – is then negative for all positive bids. This maybe counterintuitive result is demonstrated in the program: It accepts a threshold as a command line argument like `python winners_curse.py 0.8` and displays the expected payoffs for various bids between 0 and 1. For thresholds above 0.5, all points are below 0. For a threshold $a \lt 0.5$, the expected payoff peaks at $a$, linearly declining in both directions.  
