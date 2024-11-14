@@ -2,13 +2,15 @@ If you're a potential employer, you may be interested in my [Big Five traits](co
 
 # Projects
 
-My most recent commits. Programs of varying length and complexity without intentional theme (currently the theme is probability theory).  
+My most recent commits. Programs of varying length and complexity without intentional theme (currently the theme is probability theory). `gamblers_ruin.py` is currently the nicest program.  
 
 `gamblers_ruin.py` simulates and plots variations of Gambler's ruin as a Markov chain.  
+`ht_before_hh.py` tossing a fair coin, HH on average occurs later than HT.  
 `matching_cards.py` simulates matching cards problem with 100 cards.  
 `metropolis_hastings_normal.py` demonstrates the Normal–Normal conjugacy via MCMC using Metropolis-Hastings.  
 `monty_hall.py` let's you play the classic Monty Hall set up.  
 `uniform_universality.py` demonstrates the 'universality of the Uniform.'  
+`pi_estimate_mc.py` Monte Carlo integration to estimate the value of $\pi$ (very short).  
 `poisson_process.py` simulates and plots a Poisson process.  
 `winners_curse.py` shows expected payoff for bidding on a mystery prize with variable thresholds for when the bid is accepted. Don't play for threshold $\gt 0.5$.
 

@@ -5,6 +5,9 @@ Simulates a setup of the Gambler's Ruin problem as a Markov chain. Two gamblers 
 You can run the program from the command line with the following parameters: `N` (total amount of money), `i` (initial amount of money our gambler has), `p` (probability that he wins a round), `nsim` (number of rounds to simulate at the max; game may end before but not after). E. g.:  
 `python gamblers_ruin.py -N 100 -i 50 -p 0.45 --nsim 1000`
 
+#### `ht_before_hh.py`  
+Very short program to demonstrate that when tossing a fair coin, the sequence HH on average occurs later than HT. The intuition is that for HT, once we get an H we made real progress: Either we get a T and finish, or we get another H and are in the same position as before. For HH, an initial H can still be reset to 0 if a T follows.
+
 #### `matching_cards.py`
 Simulates the matching cards problem: Shuffle a deck of $N$ cards, labeled 1 through $N$. What is the probability that at least one card in position $i$ has $i$ written on it (turning over the seventh card and it has a 7 on it, e. g., but also drawing 1, 2, 3, 4, ...)?  
 Solving this analytically gives $1-\frac1e\approx0.63$, which is in fact what the program converges to for simulating the problem often enough. "Often enough" turns out to be at least 10,000 times. I also plot the convergence behavior from 10 to 10,000 replications.  
@@ -23,6 +26,9 @@ $\min\left(\frac{f_{\theta|Y}(x'|y)}{f_{\theta|Y}(x|y)},1\right)$
 
 #### `monty_hall.py`  
 Simulates the classic Monty Hall problem, allowing you to play multiple rounds. The car is randomly placed behind one of three doors, you are asked to choose one. After your choice, Monty reveals a non-car door, and you are given the option to switch. The program tracks your wins and losses, and also compares your results with theoretical probabilities of winning by always staying or always switching (simulates 1000 rounds of always staying/switching). The simulation continues until you decide to stop.
+
+#### `pi_estimate_mc.py`  
+Very short program doing Monte Carlo integration to estimate the value of $\pi$. The estimates for differently sized simulations are plotted, showing convergence to the actual value of $\pi$.  
 
 #### `poisson_process.py`  
 Simulates and visualizes a Poisson process using exponential interarrival times. The process has an event arrival rate $\lambda$ and runs for a specified time interval. The simulation generates interarrival times as i.i.d. $\text{Exponential}(\lambda)$ r.v.s. The cumulative sum of these interarrival times gives the arrival times in the Poisson process, which are then truncated at the specified end time. The arrival times are plotted on a timeline.  
