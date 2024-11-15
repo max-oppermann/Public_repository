@@ -1,8 +1,12 @@
 If you're a potential employer, you may be interested in my [Big Five traits](cognitive-metrics/Big-Five/README.md). If you are interested in my *g*eneral cognitive ability, [this](cognitive-metrics/README-g.md) may be interesting. I can also predict [my percentile rank](cognitive-metrics/README-quant.md) in job performance directly (with some error, 98.6th percentile in high complexity jobs, somewhat lower in lower complexity jobs).
 
+# Portfolio Risk  
+
+Under construction, but this will be a tool that evaluates the risk of a portfolio of stocks.
+
 # Probability Simulations
 
-My most recent commits. Programs of varying length and complexity with the theme of probability theory. `gamblers_ruin.py` is currently the nicest program.  
+Programs of varying length and complexity with the theme of probability theory. `gamblers_ruin.py` is currently the nicest program.  
 
 `gamblers_ruin.py` simulates and plots variations of Gambler's ruin as a Markov chain.  
 `ht_before_hh.py` tossing a fair coin, HH on average occurs later than HT.  
