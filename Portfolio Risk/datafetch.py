@@ -1,11 +1,12 @@
-"""Portfolio Analysis Utilities
+"""A set of helper functions to get and process data for financial portfolios.
 
-This module provides a set of helper functions for analyzing financial portfolios using 
-stock price data and custom weighting schemes. The functions leverage the yFinance library to fetch 
-data and perform calculations, enabling portfolio returns and cumulative returns to be calculated.
+Functions for analyzing financial portfolios using stock price data and custom weights. 
+The functions use the yFinance library to fetch data and perform calculations for daily
+portfolio returns and cumulative returns.
 
 Functions:
 - `process_data`: Downloads and preprocesses historical price data for a list of tickers.
+- `get_target_rate`: User input for target rate of return for calculation of Sharpe/Sortino ratio.
 - `market_cap_weights`: Calculates portfolio weights from market capitalizations (or equal weights).
 - `portfolio_returns`: Computes daily portfolio returns from individual stock returns and weights.
 - `cumulative_returns`: Computes cumulative returns of a portfolio from daily percentage changes.
@@ -48,6 +49,19 @@ def process_data(tickers: list, start_date: str, end_date: str) -> pd.DataFrame:
     # like data / data.shift(1) - 1
     returns = data.pct_change().dropna()
     return returns
+
+def get_target_rate() -> float:
+    """Prompts the user to input the target rate manually. Intended for Sharpe/Sortino ratio.
+    
+    Returns:
+        float: The target rate as a decimal (e.g., 0.03 for 3%).
+    """
+    while True:
+        try:
+            rate = float(input("Enter the current (daily) target rate (as a percentage, e.g., 0.001 for 0.001%): "))
+            return rate / 100  # percentage to decimal
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
 
 
 def market_cap_weights(tickers: list) -> dict:
@@ -146,16 +160,3 @@ def cumulative_returns(daily_returns: pd.Series) -> pd.Series:
     # 1+ to the daily multiplier rather than percentage
     cumulative = (1 + daily_returns).cumprod() - 1
     return cumulative
-
-
-# testing
-tickers_test = ['AAPL', 'GOOG', 'MSFT']
-weights_test = [0.5, 0.3, 0.2]
-
-portfolio_returns_test = portfolio_returns(
-    tickers_test, '2021-01-01', '2022-01-01', weights_test)
-
-print(portfolio_returns_test)
-print((cumulative_returns(portfolio_returns_test)))
-# putting that into the same DataFrame:
-# portfolio_daily_returns['Cumulative'] = cumulative_returns(portfolio_daily_returns)
