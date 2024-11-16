@@ -106,7 +106,10 @@ def drawdowns(returns: pd.Series) -> pd.Series:
     Returns:
         pd.Series: The drawdown for each day in the portfolio.
     """
+    # no - 1 at the end since we're normalizing to the peak.
+    # E.g., $200 peak and $150 trough => -25%, not -50%
     cumulative = (1 + returns).cumprod()
+    
     # cummax gives a Series the length of 'cumulative' with
     # the max up to i in position i
     peak = cumulative.cummax()
