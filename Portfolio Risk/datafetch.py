@@ -163,7 +163,7 @@ def cumulative_returns(daily_returns: Union[pd.Series, pd.DataFrame]) -> Union[p
 
     # multiple simulations (2D array), cumprod across axis=1
     if daily_returns.ndim == 2:
-        # 1+ to the daily multiplier rather than percentage
+        # 1+ to get the daily multiplier rather than percentage
         cumulative = (1 + daily_returns).cumprod(axis=1) - 1
     else:
         # a single portfolio (1D array)
