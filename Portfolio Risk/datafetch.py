@@ -147,16 +147,26 @@ def portfolio_returns(tickers: list, start_date: str, end_date: str, weights: Un
     return portfolio_returns_
 
 
-def cumulative_returns(daily_returns: pd.Series) -> pd.Series:
-    """Computes the daily cumulative returns of a portfolio of stocks.
+def cumulative_returns(daily_returns: Union[pd.Series, pd.DataFrame]) -> Union[pd.Series, pd.DataFrame]:
+    """Computes the cumulative returns of a portfolio or multiple simulations of portfolio returns.
 
     Args:
-        daily_returns (pd.Series): A series of portfolio day-over-day returns indexed by date.
+        daily_returns (pd.Series or pd.DataFrame): 
+            - A series of day-over-day portfolio returns for a single portfolio (1D).
+            - A DataFrame where each row represents a simulation, and each column is a daily return.
 
     Returns:
-        pd.Series: A series of the cumulative portfolio returns up to each day indexed by date.
+        pd.Series or pd.DataFrame: 
+            - If input is 1D, returns a series of cumulative portfolio returns up to each day.
+            - If input is 2D, returns a DataFrame of cumulative returns for each simulation.
     """
 
-    # 1+ to the daily multiplier rather than percentage
-    cumulative = (1 + daily_returns).cumprod() - 1
+    # multiple simulations (2D array), cumprod across axis=1
+    if daily_returns.ndim == 2:
+        # 1+ to the daily multiplier rather than percentage
+        cumulative = (1 + daily_returns).cumprod(axis=1) - 1
+    else:
+        # a single portfolio (1D array)
+        cumulative = (1 + daily_returns).cumprod() - 1
+        
     return cumulative
