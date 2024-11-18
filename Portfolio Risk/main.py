@@ -89,7 +89,12 @@ def get_weights(stock_symbols: list) -> np.ndarray:
         total_weight = 0
         weights = np.zeros(len(stock_symbols))
         for i, stock in enumerate(stock_symbols):
-            weight = float(input(f"Weight for {stock}: "))
+            while True:
+                try:
+                    weight = float(input(f"Weight for {stock}: ").strip())
+                    break
+                except ValueError:
+                    print("Invalid input. Please enter a valid number.")
             total_weight += weight
             if total_weight < 1 and i == len(stock_symbols) - 1:
                 weights[i] = weight
