@@ -126,7 +126,7 @@ def risk_contributions(individual_returns: pd.DataFrame, weights: np.ndarray) ->
         pd.DataFrame: DataFrame with the following columns for each asset:
             - 'MCR': Marginal Contribution to Risk
             - 'TRC': Total Risk Contribution
-            - 'Normalized Contribution': Contribution as a percentage of total portfolio risk.
+            - 'Normalized Contribution': Contribution as a % (in decimal) of total portfolio risk.
     """
     if not np.isclose(weights.sum(), 1):
         raise ValueError("Portfolio weights must sum to 1.")
@@ -145,6 +145,5 @@ def risk_contributions(individual_returns: pd.DataFrame, weights: np.ndarray) ->
         "Total contribution": trc,
         "Normalized contribution": normalized_contributions,
     }, index=individual_returns.columns)
-    results["Normalized Contribution"] = results["Normalized Contribution"].apply(lambda x: f"{x:.2%}")
 
     return results

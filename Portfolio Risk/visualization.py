@@ -13,10 +13,10 @@ Functions:
 - `plot_cumulative_returns`: Plot cumulative portfolio returns over time.
 - `plot_drawdowns`: Plot portfolio drawdowns over time.
 - `plot_var_cvar`: Plot a histogram of historical returns with VaR and CVaR.
+- `pie_risk_contributions`: Plot pie chart of the normalized contributions to portfolio risk.
 - `plot_simulations`: Plot a subset of simulated returns with VaR and CVaR.
 - `plot_simulations_cumulative`: Plot cumulative simulated returns with CIs and CVaR.
 """
-
 import matplotlib.pyplot as plt
 from matplotlib.axes import Axes
 import numpy as np
@@ -134,6 +134,33 @@ def plot_var_cvar(returns: pd.Series, var: float, cvar: float, axes: Axes = None
     set_plot_labels("VaR and conditional VaR for the historical data",
                     "Return",
                     "Frequency", axes)
+    return axes
+
+
+def pie_risk_contributions(normalized_contributions: pd. Series, axes: Axes = None) -> Axes:
+    """Plot pie chart of the normalized contributions to portfolio risk of the individual assets.
+
+    Args:
+        normalized_contributions (pd.Series): Norm. contr. to total portfolio risk for each asset.
+        axes (Axes, optional): Axis to plot on. If None, creates a new figure and axis.
+
+    Returns:
+        Axes: The matplotlib Axes object with the plot.
+    """
+    # looks better if square
+    if axes is None:
+        axes = plt.subplots(figsize=(8, 8))[1]
+    
+    axes.pie(
+        normalized_contributions,
+        labels=normalized_contributions.index,
+        autopct='%1.1f%%',
+        startangle=90,
+        counterclock=False,
+        # color-blind palette:
+        colors=['#377eb8', '#4daf4a', '#984ea3', '#ff7f00', '#ffff33', '#a65628', '#f781bf', '#999999']
+        )
+    axes.set_title("Normalized Contribution by Asset")
     return axes
 
 
