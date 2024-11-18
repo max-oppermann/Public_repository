@@ -160,7 +160,7 @@ def pie_risk_contributions(normalized_contributions: pd. Series, axes: Axes = No
         # color-blind palette:
         colors=['#377eb8', '#4daf4a', '#984ea3', '#ff7f00', '#ffff33', '#a65628', '#f781bf', '#999999']
         )
-    axes.set_title("Normalized Contribution by Asset")
+    axes.set_title("Risk contribution by asset")
     return axes
 
 

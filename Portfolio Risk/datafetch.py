@@ -117,7 +117,7 @@ def market_cap_weights(tickers: list) -> dict:
     return weights
 
 
-def portfolio_returns(tickers: list, start_date: str, end_date: str, weights: Union[np.ndarray, str, None] = None) -> pd.Series:
+def portfolio_returns(tickers: list, start_date: str, end_date: str, weights: np.ndarray) -> pd.Series:
     """Computes the daily returns of a portfolio of stocks.
 
     Processes historical price data for the given tickers, gets their daily returns, and 
@@ -128,24 +128,13 @@ def portfolio_returns(tickers: list, start_date: str, end_date: str, weights: Un
         tickers (list): A list of stock ticker symbols (e.g., ['AAPL', 'MSFT']).
         start_date (str): The start date for the historical data in 'YYYY-MM-DD' format.
         end_date (str): The end date for the historical data in 'YYYY-MM-DD' format.
-        weights (Union[list, str, None], optional): 
-            - An array of weights corresponding to the tickers.
-            - 'equalweights' for equal weighting.
-            - None (default) to use market capitalization weights.
+        weights (np.ndarray): An array of weights corresponding to the tickers.
 
     Returns:
         pd.Series: A time series of the portfolio day-over-day returns indexed by date.
     """
 
     individual_returns = process_data(tickers, start_date, end_date)
-
-    # market cap weights if none provided
-    # equal weights if keyword
-    if weights is None:
-        weights = list(market_cap_weights(tickers).values())
-    elif weights == 'equalweights':
-        weights = [1 / len(tickers)] * len(tickers)
-
     # underscore so my linter does not complain
     portfolio_returns_ = individual_returns.dot(weights)
     return portfolio_returns_
