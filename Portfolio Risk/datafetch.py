@@ -5,6 +5,7 @@ The functions use the yFinance library to fetch data and perform calculations fo
 portfolio returns and cumulative returns.
 
 Functions:
+- `is_valid_ticker`: Checks if a given string is a valid stock ticker.
 - `process_data`: Downloads and preprocesses historical price data for a list of tickers.
 - `get_target_rate`: User input for target rate of return for calculation of Sharpe/Sortino ratio.
 - `market_cap_weights`: Calculates portfolio weights from market capitalizations (or equal weights).
@@ -19,6 +20,22 @@ from typing import Union
 import yfinance as yf
 import pandas as pd
 import numpy as np
+
+def is_valid_ticker(ticker: str) -> bool:
+    """Check if the given string is a valid stock ticker by retrieving some data.
+    
+    Args:
+        ticker (str): The stock symbol to be checked.
+    
+    Returns:
+        bool: Whether the symbol passed the checks.    
+    """
+    try:
+        stock = yf.Ticker(ticker)
+        info = stock.info
+        return 'country' in info and info['country'] is not None
+    except (ValueError, KeyError, IndexError):
+        return False
 
 
 def process_data(tickers: list, start_date: str, end_date: str) -> pd.DataFrame:
@@ -49,19 +66,6 @@ def process_data(tickers: list, start_date: str, end_date: str) -> pd.DataFrame:
     # like data / data.shift(1) - 1
     returns = data.pct_change().dropna()
     return returns
-
-def get_target_rate() -> float:
-    """Prompts the user to input the target rate manually. Intended for Sharpe/Sortino ratio.
-    
-    Returns:
-        float: The target rate as a decimal (e.g., 0.03 for 3%).
-    """
-    while True:
-        try:
-            rate = float(input("Enter the current (daily) target rate (as a percentage, e.g., 0.001 for 0.001%): "))
-            return rate / 100  # percentage to decimal
-        except ValueError:
-            print("Invalid input. Please enter a valid number.")
 
 
 def market_cap_weights(tickers: list) -> dict:
@@ -113,7 +117,7 @@ def market_cap_weights(tickers: list) -> dict:
     return weights
 
 
-def portfolio_returns(tickers: list, start_date: str, end_date: str, weights: Union[list, str, None] = None) -> pd.Series:
+def portfolio_returns(tickers: list, start_date: str, end_date: str, weights: Union[np.ndarray, str, None] = None) -> pd.Series:
     """Computes the daily returns of a portfolio of stocks.
 
     Processes historical price data for the given tickers, gets their daily returns, and 
@@ -125,7 +129,7 @@ def portfolio_returns(tickers: list, start_date: str, end_date: str, weights: Un
         start_date (str): The start date for the historical data in 'YYYY-MM-DD' format.
         end_date (str): The end date for the historical data in 'YYYY-MM-DD' format.
         weights (Union[list, str, None], optional): 
-            - A list of weights corresponding to the tickers.
+            - An array of weights corresponding to the tickers.
             - 'equalweights' for equal weighting.
             - None (default) to use market capitalization weights.
 
