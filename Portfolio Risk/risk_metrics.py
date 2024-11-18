@@ -1,8 +1,8 @@
 """A set of helper functions to calculate various risk metrics for financial portfolios. 
 
-The functions assume input returns are *daily* returns and require consistent formatting as Pandas 
-Series. There are functions for Value at Risk (VaR), Conditional Value at Risk (CVaR), 
-the Sharpe Ratio, the Sortino Ratio, and drawdowns.
+The functions assume input returns are formatted as Pandas Series, except for `risk_contributions`
+which requires a DataFrame of the individual returns. There are functions for Value at Risk (VaR),
+Conditional VaR (CVaR), the Sharpe and Sortino Ratio, drawdowns, and contributions to risk.
 
 Functions:
 - `value_at_risk`: Calculates the Value at Risk (VaR) for a portfolio at a confidence level 
