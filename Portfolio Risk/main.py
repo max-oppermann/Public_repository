@@ -58,13 +58,12 @@ def main(tickers: list, start_date: str, end_date: str):
         5. Computes Sharpe and Sortino ratios based on the target rate.
         6. Generates a comprehensive dashboard with all calculated metrics and visualizations.
     """
-
-    weights = get_weights(tickers=tickers)
-    target_rate = get_target_rate()
-    
     individual_returns = df.process_data(tickers=tickers, start_date=start_date, end_date=end_date)
-    returns = df.portfolio_returns(tickers=tickers, start_date=start_date, end_date=end_date, weights=weights)
     
+    weights = get_weights(tickers=tickers)
+    returns = df.portfolio_returns(tickers=tickers, start_date=start_date, end_date=end_date, weights=weights)
+
+    target_rate = get_target_rate()
     risk_contributions = rm.risk_contributions(individual_returns=individual_returns, weights=weights)
     sharpe_ratio = rm.sharpe_ratio(returns=returns, target_rate=target_rate)
     sortino_ratio = rm.sortino_ratio(returns=returns, target_rate=target_rate)
@@ -75,6 +74,61 @@ def main(tickers: list, start_date: str, end_date: str):
                        sortino_ratio=sortino_ratio,
                        target_rate=target_rate)
     
+
+def generate_dashboard(returns: pd.Series, risk_contributions: pd.DataFrame, sharpe_ratio: float, sortino_ratio: float, target_rate: float):
+    """
+    Generates a dashboard for portfolio analysis, dynamically adjusting the size to fit the screen.
+
+    Args:
+        returns (pd.Series): Portfolio returns over time.
+        risk_contributions (pd.DataFrame): DataFrame with risk contributions per asset.
+        sharpe_ratio (float): The portfolio's Sharpe ratio.
+        sortino_ratio (float): The portfolio's Sortino ratio.
+        target_rate: (float): The target rate; e.g. the risk-free rate.
+    """
+    # limiting the window size
+    root = tk.Tk()
+    screen_width = root.winfo_screenwidth()
+    screen_height = root.winfo_screenheight()
+    
+    screen_width_in = screen_width / 96
+    screen_height_in = screen_height / 96
+    
+    scaling_factor = 0.9
+    fig_width = min(screen_width_in * scaling_factor, 20)
+    fig_height = min(screen_height_in * scaling_factor, 30)
+    
+    _, axs = plt.subplots(4, 2, figsize=(fig_width, fig_height))
+    
+    # plotting
+    vis.pie_risk_contributions(risk_contributions["Normalized contribution"], axs[0, 0])
+    axs[0, 0].set_title("Risk Contributions by Asset")
+    
+    axs[0, 1].axis("off")  # blanking the outer rectangle
+    sharpe_sortino_text = f"Sharpe Ratio: {sharpe_ratio:.2f}\nSortino Ratio: {sortino_ratio:.2f}\
+        \nTarget rate daily: {target_rate:.4%}\nTarget rate annual: {(1+target_rate)**252 - 1:.2%}"
+    axs[0, 1].text(
+        0, 0.75, # text in upper left corner
+        sharpe_sortino_text,
+        fontsize=16, fontweight="bold")
+    
+    vis.plot_historical_returns(returns, axes=axs[1, 0])
+    vis.plot_cumulative_returns(returns, axes=axs[1, 1])
+    vis.plot_drawdowns(returns, axes=axs[2, 0])
+    
+    var = rm.value_at_risk(returns, confidence_level=CONFIDENCE_LEVEL, method=METHOD)
+    cvar = rm.conditional_value_at_risk(returns, confidence_level=CONFIDENCE_LEVEL)
+    vis.plot_var_cvar(returns, var, cvar, axes=axs[2, 1])
+    
+    metrics = fs.monte_carlo_var(returns, num_sim=NUM_SIM, num_days=NUM_DAYS, confidence_level=CONFIDENCE_LEVEL)
+    projection = fs.simulate_future_returns(returns, num_sim=NUM_SIM, num_days=NUM_DAYS)
+    vis.plot_simulations(projection, metrics['daily']['VaR'], metrics['daily']['CVaR'],
+                         num_paths=3, axes=axs[3, 0])
+    vis.plot_simulations_cumulative(projection, metrics['cumulative']['CVaR'],
+                                    lower_pct=LOWER_PCT, upper_pct=UPPER_PCT, axes=axs[3, 1])
+    
+    plt.tight_layout(rect=[0, 0.05, 1, 1])  # ensures no overlap
+    plt.show()
 
 def get_tickers(args) -> list:
     """Prompts the user to input stock tickers or retrieves them from command line.
@@ -132,7 +186,6 @@ def get_target_rate() -> float:
         except (ValueError, IndexError):
             print("Invalid input. Please enter a valid rate, optionally followed by 'yearly' or 'annually'.")
 
-            
 
 def get_weights(tickers: list) -> np.ndarray:
     """Prompts the user for which weights should be assigned.
@@ -164,22 +217,18 @@ def get_weights(tickers: list) -> np.ndarray:
                 except ValueError:
                     print("Invalid input. Please enter a valid number.")
             total_weight += weight
+            weights[i] = weight
             if total_weight < 1 and i == len(tickers) - 1:
-                weights[i] = weight
                 print("Final stock reached, but total weight != 1. Increasing all weights.")
                 return weights / total_weight
             if total_weight < 1: # the normal inputting
-                weights[i] = weight
                 continue
             if total_weight == 1 and i < len(tickers) - 1:
-                weights[i] = weight
                 print("Total weight of 1 reached. Assigning weight 0 to the rest.")
                 return weights
             if total_weight == 1 and i == len(tickers) - 1: # end of normal inputting
-                weights[i] = weight
                 return weights
             if total_weight > 1:
-                weights[i] = 1 - (total_weight - weight)
                 print("Total weight is larger than 1. Truncating weights.")
                 return weights / total_weight
     # equal or market cap weights
@@ -191,67 +240,6 @@ def get_weights(tickers: list) -> np.ndarray:
 
     return weights
 
-
-def generate_dashboard(returns: pd.Series, risk_contributions: pd.DataFrame, sharpe_ratio: float, sortino_ratio: float, target_rate: float):
-    """
-    Generates a dashboard for portfolio analysis, dynamically adjusting the size to fit the screen.
-
-    Args:
-        returns (pd.Series): Portfolio returns over time.
-        risk_contributions (pd.DataFrame): DataFrame with risk contributions per asset.
-        sharpe_ratio (float): The portfolio's Sharpe ratio.
-        sortino_ratio (float): The portfolio's Sortino ratio.
-        target_rate: (float): The target rate; e.g. the risk-free rate.
-    """
-    # Retrieve screen resolution using tkinter
-    root = tk.Tk()
-    screen_width = root.winfo_screenwidth()
-    screen_height = root.winfo_screenheight()
-    
-    # Define a scaling factor to prevent overly large plots
-    scaling_factor = 0.9
-    
-    # Convert screen dimensions from pixels to inches (considering standard DPI of 96)
-    screen_width_in = screen_width / 96
-    screen_height_in = screen_height / 96
-    
-    # Apply scaling factor
-    fig_width = min(screen_width_in * scaling_factor, 20)  # max 20 inches wide
-    fig_height = min(screen_height_in * scaling_factor, 30)  # max 30 inches tall
-    
-    # Create main figure with adjusted layout
-    _, axs = plt.subplots(4, 2, figsize=(fig_width, fig_height))
-    
-    # pie chart
-    vis.pie_risk_contributions(risk_contributions["Normalized contribution"], axs[0, 0])
-    axs[0, 0].set_title("Risk Contributions by Asset")
-    
-    # ratios in a textbox
-    axs[0, 1].axis("off")  # blanking the outer rectangle
-    sharpe_sortino_text = f"Sharpe Ratio: {sharpe_ratio:.2f}\nSortino Ratio: {sortino_ratio:.2f}\
-        \nTarget rate daily: {target_rate:.4%}\nTarget rate annual: {(1+target_rate)**252 - 1:.2%}"
-    axs[0, 1].text(
-        0, 0.75, # text in upper left corner
-        sharpe_sortino_text,
-        fontsize=16, fontweight="bold")
-    
-    vis.plot_historical_returns(returns, axes=axs[1, 0])
-    vis.plot_cumulative_returns(returns, axes=axs[1, 1])
-    vis.plot_drawdowns(returns, axes=axs[2, 0])
-    
-    var = rm.value_at_risk(returns, confidence_level=CONFIDENCE_LEVEL, method=METHOD)
-    cvar = rm.conditional_value_at_risk(returns, confidence_level=CONFIDENCE_LEVEL)
-    vis.plot_var_cvar(returns, var, cvar, axes=axs[2, 1])
-    
-    metrics = fs.monte_carlo_var(returns, num_sim=NUM_SIM, num_days=NUM_DAYS, confidence_level=CONFIDENCE_LEVEL)
-    projection = fs.simulate_future_returns(returns, num_sim=NUM_SIM, num_days=NUM_DAYS)
-    vis.plot_simulations(projection, metrics['daily']['VaR'], metrics['daily']['CVaR'],
-                         num_paths=3, axes=axs[3, 0])
-    vis.plot_simulations_cumulative(projection, metrics['cumulative']['CVaR'],
-                                    lower_pct=LOWER_PCT, upper_pct=UPPER_PCT, axes=axs[3, 1])
-    
-    plt.tight_layout(rect=[0, 0.05, 1, 1])  # ensures no overlap
-    plt.show()
 
 def get_dates(args) -> tuple[str, str]:
     """Retrieves start and end dates for portfolio analysis.
