@@ -1,8 +1,11 @@
 If you're a potential employer, you may be interested in my [Big Five traits](cognitive-metrics/Big-Five/README.md). If you are interested in my *g*eneral cognitive ability, [this](cognitive-metrics/README-g.md) may be interesting. I can also predict [my percentile rank](cognitive-metrics/README-quant.md) in job performance directly (with some error, 98.6th percentile in high complexity jobs, somewhat lower in lower complexity jobs).
 
+Roughly in order of importance and recency:
+
 # Portfolio Risk  
 
-Under construction, but this will be a tool that evaluates the risk of a portfolio of stocks.
+Contains a Python project for analyzing stock portfolios using historical data, risk metrics, and future return simulations. The analysis outputs a visual dashboard summarizing portfolio performance and risk.  
+Modularly designed with components for data fetching, risk calculations (e.g., VaR), future simulations, and visualization. For detailed information on usage, features, and examples, see the project README.
 
 # Probability Simulations
 
