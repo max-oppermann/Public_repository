@@ -109,8 +109,8 @@ def market_cap_weights(tickers: list) -> dict:
         if cap == 0:
             market_caps[ticker] = average_market_cap
 
+    # weights are proportion of total market cap
     total_market_cap = np.sum(list(market_caps.values()))
-
     for ticker, cap in market_caps.items():
         weights[ticker] = cap / total_market_cap
 
@@ -135,16 +135,15 @@ def portfolio_returns(tickers: list, start_date: str, end_date: str, weights: np
     """
 
     individual_returns = process_data(tickers, start_date, end_date)
-    # underscore so my linter does not complain
-    portfolio_returns_ = individual_returns.dot(weights)
-    return portfolio_returns_
+    returns = individual_returns.dot(weights)
+    return returns
 
 
-def cumulative_returns(daily_returns: Union[pd.Series, pd.DataFrame]) -> Union[pd.Series, pd.DataFrame]:
+def cumulative_returns(returns: Union[pd.Series, pd.DataFrame]) -> Union[pd.Series, pd.DataFrame]:
     """Computes the cumulative returns of a portfolio or multiple simulations of portfolio returns.
 
     Args:
-        daily_returns (pd.Series or pd.DataFrame): 
+        returns (pd.Series or pd.DataFrame): 
             - A series of day-over-day portfolio returns for a single portfolio (1D).
             - A DataFrame where each row represents a simulation, and each column is a daily return.
 
@@ -155,11 +154,11 @@ def cumulative_returns(daily_returns: Union[pd.Series, pd.DataFrame]) -> Union[p
     """
 
     # multiple simulations (2D array), cumprod across axis=1
-    if daily_returns.ndim == 2:
+    if returns.ndim == 2:
         # 1+ to get the daily multiplier rather than percentage
-        cumulative = (1 + daily_returns).cumprod(axis=1) - 1
+        cumulative = (1 + returns).cumprod(axis=1) - 1
     else:
         # a single portfolio (1D array)
-        cumulative = (1 + daily_returns).cumprod() - 1
+        cumulative = (1 + returns).cumprod() - 1
         
     return cumulative

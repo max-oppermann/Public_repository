@@ -1,5 +1,29 @@
-import sys
+"""
+This module provides a comprehensive workflow for portfolio analysis, integrating data retrieval,
+risk metrics calculation, and visualization. It allows users to analyze historical and simulated
+performance of a portfolio, compute various financial metrics, and visualize results.
+
+Faster to run from the command line. Accepts start and end dates for the portfolio analysis
+and a list of stock ticker symbols. The weights and target rate (e.g., risk-free rate) are
+supplied via user input.
+
+Key Features:
+- Retrieves historical stock price data for a specified portfolio.
+- Computes portfolio metrics, including returns, risk contributions, Sharpe and Sortino ratio.
+- Simulates future portfolio returns.
+- Visualizes results via a dashboard with multiple plots, including cumulative returns,
+  drawdowns, and Value at Risk (VaR) metrics.
+
+Example:
+    python main.py --start 2023-01-01 --end 2023-12-31 AAPL MSFT GOOGL
+"""
+
+import argparse
+from datetime import datetime
+import tkinter as tk
+
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 
 import datafetch as df
@@ -7,45 +31,68 @@ import future_simulation as fs
 import risk_metrics as rm
 import visualization as vis
 
-def main():
-    """TO DO:
-    get list of stocks
-    get list of weights for those stocks
-    get target/risk free rate
-    'get' start and end dates
-    
-    process_data to get individual returns
-    portfolio_returns + weights from above for portfolio returns
-    risk_contributions from individual returns + weights
-    Sharpe and Sortino ratio (requiring returns + target rate)
+CONFIDENCE_LEVEL = 0.95 # for C/VaR calculations
+METHOD = 'historical' # method vor VaR calculation, 'parametric' is the other option
 
-    generate_dashboard takes the simple portoflio returns, the DataFrame
-    from risk_contributions, and the Sharpe/Sortino ratio
-    
-    6 plotting functions inside
-    + the pie chart + Sharpe/Sortino
-    
-    --- go through all parameters again!!
-        make them global variables in main.py:
-        
-    --- Also: modify get_target_rate to extrapolate from annual rate
+NUM_SIM = 10000 # number of simulations when generating future returns
+NUM_DAYS = 252 # for simulating future returns
+
+LOWER_PCT = 5 # percentiles for CI in projecting cumulative returns; do not need to add to 1
+UPPER_PCT = 95
+
+YEAR_DAYS = 252 # for converting from annual to daily rate
+
+def main(tickers: list, start_date: str, end_date: str):
+    """Executes the main workflow for portfolio analysis.
+
+    Args:
+        tickers (list[str]): A list of stock ticker symbols for the portfolio.
+        start_date (str): The start date for the portfolio's historical data.
+        end_date (str): The end date for the portfolio's historical data.
+
+    Workflow:
+        1. Prompts the user to provide weights for the portfolio or assigns them automatically.
+        2. Retrieves the target rate (daily or annual) for Sharpe and Sortino ratio calculations.
+        3. Processes historical data for the specified tickers within the date range.
+        4. Calculates portfolio returns and individual stock contributions to risk.
+        5. Computes Sharpe and Sortino ratios based on the target rate.
+        6. Generates a comprehensive dashboard with all calculated metrics and visualizations.
     """
 
-def get_stocks() -> list:
+    weights = get_weights(tickers=tickers)
+    target_rate = get_target_rate()
+    
+    individual_returns = df.process_data(tickers=tickers, start_date=start_date, end_date=end_date)
+    returns = df.portfolio_returns(tickers=tickers, start_date=start_date, end_date=end_date, weights=weights)
+    
+    risk_contributions = rm.risk_contributions(individual_returns=individual_returns, weights=weights)
+    sharpe_ratio = rm.sharpe_ratio(returns=returns, target_rate=target_rate)
+    sortino_ratio = rm.sortino_ratio(returns=returns, target_rate=target_rate)
+    
+    generate_dashboard(returns=returns,
+                       risk_contributions=risk_contributions,
+                       sharpe_ratio=sharpe_ratio,
+                       sortino_ratio=sortino_ratio,
+                       target_rate=target_rate)
+    
+
+def get_tickers(args) -> list:
     """Prompts the user to input stock tickers or retrieves them from command line.
     
     If tickers are present in the CL, they are returned as a list. 
     If no command-line tickers are given, the function prompts the user to input tickers one by one. 
     The user can type 'done' to finish the input. These ticker inputs are verified, but not 
     the tickers from the command line (presumably you want to be fast then).
+    
+    Args:
+        args: The parsed command-line arguments.
 
     Returns:
         list: A list of stock ticker symbols (strings).
     """
     
-    # using command line, the symbols just need to be correct
-    if len(sys.argv) > 1:
-        return sys.argv[1:]
+    if args.tickers:
+        return args.tickers
    
     tickers = []
     while True:
@@ -59,30 +106,32 @@ def get_stocks() -> list:
     return tickers
 
 
-def get_dates():
-    """TO DO
-    use argparse instead; gotta adjust get_stocks then. 
-    See also gamblers_ruin.py
-    
-    parser = argparse.ArgumentParser(description="Simulate Gambler's ruin.")
-    parser.add_argument('-N', type=int, help='Total amount of money between the two gamblers')
-    arguments = parser.parse_args()
-    arguments.N
-    """
-
-
 def get_target_rate() -> float:
-    """Prompts the user to input the target rate manually. Intended for Sharpe/Sortino ratio.
-    
+    """Prompts user for a daily or annual rate (converts latter to daily).
+
     Returns:
-        float: The target rate as a decimal (e.g., 0.03 for 3%).
+        float: The daily rate as a decimal.
     """
     while True:
         try:
-            rate = float(input("Enter the current (daily) target rate (as a percentage, e.g., 0.001 for 0.001%): "))
-            return rate / 100  # percentage to decimal
-        except ValueError:
-            print("Invalid input. Please enter a valid number.")
+            # Prompt the user for input
+            rate_input = input(
+                "Enter the target rate as a percentage (0.1 for 0.1%) for Sharpe/Sortino calculations:\n"
+                "Use keywords 'yearly' or 'annually' after the rate if it's not a daily rate: "
+            ).split()
+            
+            rate = float(rate_input[0]) / 100  # percentage to decimal
+            
+            if len(rate_input) == 1:
+                return rate
+            
+            if rate_input[1].lower() in ['yearly', 'annually']:
+                return (1 + rate) ** (1 / YEAR_DAYS) - 1  # annual to daily
+            
+            print("Invalid keyword. Use 'yearly' or 'annually' for annual rates.")
+        except (ValueError, IndexError):
+            print("Invalid input. Please enter a valid rate, optionally followed by 'yearly' or 'annually'.")
+
             
 
 def get_weights(tickers: list) -> np.ndarray:
@@ -134,18 +183,18 @@ def get_weights(tickers: list) -> np.ndarray:
                 print("Total weight is larger than 1. Truncating weights.")
                 return weights / total_weight
     # equal or market cap weights
-    specification = input("Market capitalization weights or 'equalweights'?")
+    specification = input("Market capitalization weights or 'equalweights'? ")
     if specification.strip().lower() == 'equalweights':
-        weights = [1 / len(tickers)] * len(tickers)
+        weights = np.array([1 / len(tickers)] * len(tickers))
     else:
-        weights = list(df.market_cap_weights(tickers).values())
+        weights = np.array(list(df.market_cap_weights(tickers).values()))
 
     return weights
 
 
-def generate_dashboard(returns, risk_contributions, sharpe_ratio, sortino_ratio, target_rate):
+def generate_dashboard(returns: pd.Series, risk_contributions: pd.DataFrame, sharpe_ratio: float, sortino_ratio: float, target_rate: float):
     """
-    Generates a dashboard for portfolio analysis.
+    Generates a dashboard for portfolio analysis, dynamically adjusting the size to fit the screen.
 
     Args:
         returns (pd.Series): Portfolio returns over time.
@@ -154,11 +203,27 @@ def generate_dashboard(returns, risk_contributions, sharpe_ratio, sortino_ratio,
         sortino_ratio (float): The portfolio's Sortino ratio.
         target_rate: (float): The target rate; e.g. the risk-free rate.
     """
+    # Retrieve screen resolution using tkinter
+    root = tk.Tk()
+    screen_width = root.winfo_screenwidth()
+    screen_height = root.winfo_screenheight()
+    
+    # Define a scaling factor to prevent overly large plots
+    scaling_factor = 0.9
+    
+    # Convert screen dimensions from pixels to inches (considering standard DPI of 96)
+    screen_width_in = screen_width / 96
+    screen_height_in = screen_height / 96
+    
+    # Apply scaling factor
+    fig_width = min(screen_width_in * scaling_factor, 20)  # max 20 inches wide
+    fig_height = min(screen_height_in * scaling_factor, 30)  # max 30 inches tall
+    
     # Create main figure with adjusted layout
-    _, axs = plt.subplots(4, 2, figsize=(20, 30))
+    _, axs = plt.subplots(4, 2, figsize=(fig_width, fig_height))
     
     # pie chart
-    vis.pie_risk_contributions(risk_contributions["Normalized Contribution"], axs[0, 0])
+    vis.pie_risk_contributions(risk_contributions["Normalized contribution"], axs[0, 0])
     axs[0, 0].set_title("Risk Contributions by Asset")
     
     # ratios in a textbox
@@ -174,20 +239,66 @@ def generate_dashboard(returns, risk_contributions, sharpe_ratio, sortino_ratio,
     vis.plot_cumulative_returns(returns, axes=axs[1, 1])
     vis.plot_drawdowns(returns, axes=axs[2, 0])
     
-    var = rm.value_at_risk(returns)
-    cvar = rm.conditional_value_at_risk(returns)
+    var = rm.value_at_risk(returns, confidence_level=CONFIDENCE_LEVEL, method=METHOD)
+    cvar = rm.conditional_value_at_risk(returns, confidence_level=CONFIDENCE_LEVEL)
     vis.plot_var_cvar(returns, var, cvar, axes=axs[2, 1])
     
-    metrics = fs.monte_carlo_var(returns)
-    projection = fs.simulate_future_returns(returns)
+    metrics = fs.monte_carlo_var(returns, num_sim=NUM_SIM, num_days=NUM_DAYS, confidence_level=CONFIDENCE_LEVEL)
+    projection = fs.simulate_future_returns(returns, num_sim=NUM_SIM, num_days=NUM_DAYS)
     vis.plot_simulations(projection, metrics['daily']['VaR'], metrics['daily']['CVaR'],
                          num_paths=3, axes=axs[3, 0])
     vis.plot_simulations_cumulative(projection, metrics['cumulative']['CVaR'],
-                                    lower_pct=20, upper_pct=80, axes=axs[3, 1])
+                                    lower_pct=LOWER_PCT, upper_pct=UPPER_PCT, axes=axs[3, 1])
     
     plt.tight_layout(rect=[0, 0.05, 1, 1])  # ensures no overlap
     plt.show()
 
+def get_dates(args) -> tuple[str, str]:
+    """Retrieves start and end dates for portfolio analysis.
+
+    Args:
+        args: The parsed command-line arguments (argparse.Namespace).
+
+    Returns:
+        tuple[str, str]: A tuple containing the start and end dates as strings.
+    """
+    # Use provided arguments or prompt the user
+    start_date = args.start
+    end_date = args.end
+    
+    if start_date is None or end_date is None:
+        print("Missing date arguments. Please input values manually.")
+        while not start_date:
+            start_date = input("Enter the start date for portfolio history (YYYY-MM-DD): ").strip()
+            if not is_valid_date(start_date):
+                print("Invalid date format. Please enter a date in YYYY-MM-DD format.")
+                start_date = None  # reset to keep loop going
+        while not end_date:
+            end_date = input("Enter the end date for portfolio history (YYYY-MM-DD): ").strip()
+            if not is_valid_date(end_date):
+                print("Invalid date format. Please enter a date in YYYY-MM-DD format.")
+                end_date = None
+    
+    return start_date, end_date
+
+
+def is_valid_date(date_str: str) -> bool:
+    """Checks if a given string is a valid date in YYYY-MM-DD format."""
+    try:
+        datetime.strptime(date_str, "%Y-%m-%d")
+        return True
+    except ValueError:
+        return False
+
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description="Retrieve start/end dates for portfolio analysis.")
+    parser.add_argument('--start', type=str, help='Start date in YYYY-MM-DD format')
+    parser.add_argument('--end', type=str, help='End date in YYYY-MM-DD format')
+    parser.add_argument('tickers', nargs='*', help="List of stock ticker symbols to analyze.")
+        
+    arguments = parser.parse_args()
+    START_DATE, END_DATE = get_dates(arguments)
+    TICKERS = get_tickers(arguments)
+    
+    main(TICKERS, START_DATE, END_DATE)
