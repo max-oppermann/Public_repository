@@ -20,6 +20,6 @@ which yields a 95% confidence interval of $[1.168,3.968]$ for the $z$-score, cor
 This is an update to the published article:<br>  
 Schmidt, F., Hunter, J. “The Validity and Utility of Selection Methods in Personnel Psychology: Practical and Theoretical Implications of 85 Years of Research Findings.” <i>Psychological Bulletin</i>, 124(2), 1998. 262–274.
 <br><br>
-<sup>2</sup><i>Ibid.</i> page 14: "[...] GMA validity
+<sup>2</sup><i>Ibid.</i> page 13: "[...] GMA validity
 ranged from .74 for professional and managerial jobs down to .39 for unskilled jobs."
 </small>
