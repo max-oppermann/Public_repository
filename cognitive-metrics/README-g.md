@@ -8,7 +8,10 @@ Imagine measuring general athleticism via performance in gymnastics and long-dis
 
 # SAT, AGCT, GRE
 [Link](https://cognitivemetrics.co/)  
-The 1980 SAT, the Army General Classification Test, and the old GRE have a very high *g*-loading. They are considered the gold standard of free tests since they can be normed against an enormous population of test takers.
+The 1980 SAT, the Army General Classification Test, and the old GRE have a very high *g*-loading. They are considered the gold standard of free tests since they can be normed against an enormous population of test takers.  
+
+*You may have gotten here by clicking a link on my CV*: Following the link above leads to a website of cognitive testing enthusiasts who have automated (made digital) some of the classic American standardized tests. They are a little more condensed than the originals – the subtests take an hour each – but can draw from a large bank of questions and have norms available from their histories of test takers. You can convince yourself of their legitimacy by looking inside the tests.  
+The SAT in this form has since been replaced I think, but the questions were drawn from before the 1994 recentering; clearly the GRE test is drawn from before 2011 since the scores go up to 800.
 ![SAT, AGCT, GRE](SAT-AGCT-GRE.png)  
 
 # CAIT
