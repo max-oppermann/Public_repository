@@ -1,4 +1,12 @@
-If you're a potential employer, you may be interested in my [Big Five traits](cognitive-metrics/Big-Five/README.md). If you are interested in my *g*eneral cognitive ability, [this](cognitive-metrics/README-g.md) may be interesting. I can also predict [my percentile rank](cognitive-metrics/README-quant.md) in job performance directly (with some error, 99.5th percentile in high complexity jobs, somewhat lower in lower complexity jobs).
+If you're a potential employer, you might be interested in a few things beyond my projects:
+
+- My [Big Five personality traits](cognitive-metrics/Big-Five/README.md)
+
+- What I choose to study in my free time and how I structure that learning — see the [Interests](cognitive-metrics/Interests/README.md) directory
+
+- An estimate of my [general cognitive ability](cognitive-metrics/README-g.md)
+
+- A prediction of my [expected job performance percentile](cognitive-metrics/README-quant.md), particularly in high-complexity roles (99.5th percentile, with some statistical and model uncertainty; lower in low-complexity roles)
 
 Roughly in order of importance and recency:
 
@@ -26,13 +34,6 @@ Programs of varying length and complexity with the theme of probability theory. 
 Dieser Ordern enthält ein Notebook, das eine kleine Beispielanalyse der Wahlergebnisse im Lande Bremen der Bundestagswahl 2021 auf Stadtteilebene beschreibt. Es geht mir v. a. darum, eine breite Palette an statistischem Wissen zu demonstrieren; die tatsächlichen Ergebnisse der Analyse sind nachrangig. Man kann sich das hier in GitHub angucken, aber die Hyperlinks vom und zum Inhaltsverzeichnis funktionieren dann nicht. Man klicke stattdessen [hier](https://nbviewer.org/github/max-oppermann/Public_repository/blob/master/Wahldaten-Analyse/Wahldaten_Analyse.ipynb) oder, wenn das nicht funktioniert, gehe zu https://nbviewer.org/ und füge den Link zum Notebook in meinem Repository ein (dieser hier: https://github.com/max-oppermann/Public_repository/blob/master/Wahldaten-Analyse/Wahldaten_Analyse.ipynb).
 
 This directory contains a  notebook (exclusively in German!) with an example analysis of the 2021 federal election results in Germany's federal state of Bremen using county-level data. It's mostly about showcasing a broad range of statistical knowledge; the actual results of the analysis are secondary.
-
-# Anki Decks  
-
-Some flashcard decks for the flashcard learning app Anki. The field "Source" will usually give the source as "author, *title of the book*, [number of chapter] (title of the chapter)". For example: "Hastie; Tibshirani, *Introduction to Statistical Learning*, 3 (Linear Regression)". Sometimes there are additions like "Lab" for the labs in ISLP or "Ex. [number]" for the exercises in Blitzstein.  
-- *Blitzstein, Probability*. Enormous! Around 1400 notes and 1600 cards. The entire textbook "Introduction to Probability" by Blitzstein and Hwang; i. e., practically all theorems and definitions, almost all proofs for those theorems, almost all examples, the large majority of exercises and solutions. I left out exercises that only seemed like tedious calculations or were repeating a concept already covered sufficiently (in my estimation).  
-- *ISLP*. Around 600 cards and notes. The video lectures, book chapters, labs, and some bits from the programming exercises from "An Introduction to Statistical Learning with Applications in Python" by Hastie, Tibshirani et al.  
-- *Freedman, Statistical Models*. Around 250 notes and 350 cards. A more superficial treatment of "Statistical Models" by David Freedman (not to be confused with "Statistics" by Freedman, Purves, and Pisani). Exercises only if solutions were available.
 
 # Exercises for ISLP
 
