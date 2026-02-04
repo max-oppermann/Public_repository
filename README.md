@@ -3,10 +3,9 @@ If you're a potential employer, you might be interested in a few things beyond m
 - My [Big Five personality traits](cognitive-metrics/Big-Five/README.md)
 
 - What I choose to study in my free time and how I structure that learning — see the [Interests](cognitive-metrics/Interests/README.md) directory
+<!-- - An estimate of my [general cognitive ability](cognitive-metrics/README-g.md) -->
 
-- An estimate of my [general cognitive ability](cognitive-metrics/README-g.md)
-
-- A prediction of my [expected job performance percentile](cognitive-metrics/README-quant.md), particularly in high-complexity roles (99.5th percentile, with some statistical and model uncertainty; lower in low-complexity roles)
+<!-- - A prediction of my [expected job performance percentile](cognitive-metrics/README-quant.md), particularly in high-complexity roles (99.5th percentile, with some statistical and model uncertainty; lower in low-complexity roles)-->
 
 Roughly in order of importance and recency:
 
@@ -31,7 +30,7 @@ Programs of varying length and complexity with the theme of probability theory. 
 
 # Wahldaten-Analyse
 
-Dieser Ordern enthält ein Notebook, das eine kleine Beispielanalyse der Wahlergebnisse im Lande Bremen der Bundestagswahl 2021 auf Stadtteilebene beschreibt. Es geht mir v. a. darum, eine breite Palette an statistischem Wissen zu demonstrieren; die tatsächlichen Ergebnisse der Analyse sind nachrangig. Man kann sich das hier in GitHub angucken, aber die Hyperlinks vom und zum Inhaltsverzeichnis funktionieren dann nicht. Man klicke stattdessen [hier](https://nbviewer.org/github/max-oppermann/Public_repository/blob/master/Wahldaten-Analyse/Wahldaten_Analyse.ipynb) oder, wenn das nicht funktioniert, gehe zu https://nbviewer.org/ und füge den Link zum Notebook in meinem Repository ein (dieser hier: https://github.com/max-oppermann/Public_repository/blob/master/Wahldaten-Analyse/Wahldaten_Analyse.ipynb).
+Dieser Ordern enthält ein Notebook, das eine kleine Beispielanalyse der Wahlergebnisse im Lande Bremen der Bundestagswahl 2021 auf Stadtteilebene beschreibt. Es geht mir v. a. darum, eine breite Palette an statistischen Methoden zu demonstrieren; die tatsächlichen Ergebnisse der Analyse sind nachrangig. Man kann sich das hier in GitHub angucken, aber die Hyperlinks vom und zum Inhaltsverzeichnis funktionieren dann nicht. Man klicke stattdessen [hier](https://nbviewer.org/github/max-oppermann/Public_repository/blob/master/Wahldaten-Analyse/Wahldaten_Analyse.ipynb) oder, wenn das nicht funktioniert, gehe zu https://nbviewer.org/ und füge den Link zum Notebook in meinem Repository ein (dieser hier: https://github.com/max-oppermann/Public_repository/blob/master/Wahldaten-Analyse/Wahldaten_Analyse.ipynb).
 
 This directory contains a  notebook (exclusively in German!) with an example analysis of the 2021 federal election results in Germany's federal state of Bremen using county-level data. It's mostly about showcasing a broad range of statistical knowledge; the actual results of the analysis are secondary.
 
