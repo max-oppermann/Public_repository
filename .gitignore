@@ -2,3 +2,4 @@
 .ipynb_checkpoints/
 Wahldaten-Analyse/*.csv
 __pycache__/
+.vscode
