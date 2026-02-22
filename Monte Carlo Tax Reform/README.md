@@ -68,7 +68,7 @@ matplotlib
 Das Notebook kann ohne lokale Installation direkt im Browser ausgeführt 
 werden:
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1RkHlSbcHgnifvECknQH-DhMCXyrqQ85o?usp=sharing)
 
 Parameter können frei verändert und die Simulationen neu ausgeführt 
 werden. Mit `num_sim = 10000` dauert jede Zelle etwa 5–10 Sekunden; 
