@@ -9,6 +9,26 @@ If you're a potential employer, you might be interested in a few things beyond m
 
 Roughly in order of importance and recency:
 
+# Monte-Carlo-Simulation einer Bremer Steuerreform
+
+Quantitative Policy-Analyse einer Steuerreform in Bremen: 100.000 
+Monte-Carlo-Simulationen in Python schätzen Effizienz- und 
+Verteilungswirkungen einer aufkommensneutralen Umschichtung von 600 
+Millionen Euro aus Gewerbe- und Grunderwerbsteuer in die Grundsteuer. 
+
+Methodisch kombiniert die Analyse empirisch kalibrierte 
+Wahrscheinlichkeitsverteilungen (abgeschnittene Normalverteilungen, 
+$t$-Verteilungen mit Inversionsmethode, Dreiecksverteilungen) und
+korrelierte Zufallsvektoren via Gram-Schmidt-Verfahren. 
+Verteilungseffekte werden durch Wohlfahrtsgewichte aus isoelastischen 
+Nutzenfunktionen modelliert.
+
+**Ergebnis:** Effizienzgewinn von durchschnittlich 330 
+Mio. Euro/Jahr; längerfristig Wachstum von 150–500 Mio. pro Jahr.
+Verteilungseffekte sind grundsätzlich regressiv, aber gewichtete Effekte
+(welche die Verteilungswirkung systematisch einbeziehen) bleiben 
+trotzdem in fast allen Fällen positiv.
+
 # Portfolio Risk  
 
 Contains a Python project for analyzing stock portfolios using historical data, risk metrics, and future return simulations. The analysis outputs a visual dashboard summarizing portfolio performance and risk.  
